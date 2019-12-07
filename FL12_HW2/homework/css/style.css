@@ -1,4 +1,10 @@
-@media not print {
+.blocks .tm-team-description-container p:nth-child(3) {
+  letter-spacing: 5px;
+  word-spacing: 10px;
+  font-style: italic;
+}
+
+@media screen {
   .tm-nav-item-link:hover {
     background-color: lightskyblue;
     color: #fff;
@@ -50,8 +56,10 @@
     list-style: lower-alpha;
   }
 
-  .heading ol li:hover::before {
+  .heading ol li a:hover::before {
     content: ">";
+    display: inline-block;
+    color: black;
   }
 
   .heading ol li a.text::after {
@@ -65,6 +73,7 @@
 
   .tm-section-description {
     line-height: 30px;
+    text-indent: 25px;
   }
 
   .tm-team-description-container {
@@ -76,12 +85,6 @@
 
   .tm-team-description-container p {
     text-indent: 25px;
-  }
-
-  .blocks .tm-team-description-container p:nth-child(3) {
-    letter-spacing: 5px;
-    word-spacing: 10px;
-    font-style: italic;
   }
 
   .gallery-container p {
@@ -132,7 +135,7 @@
   }
 
   .contact-form input,
-  .contact-form input:focus,
+  /* .contact-form input:focus, */
   .contact-form textarea,
   .contact-form textarea:focus,
   .contact-form button,
@@ -170,7 +173,91 @@
 }
 
 @media print {
-  .tm-sidebar {
+  #about,
+  .tm-team-img,
+  .tm-sidebar,
+  .blocks .tm-content-box,
+  section:last-of-type,
+  .carousel-indicators
+   {
     display: none;
   }
+
+  .tm-main-content {
+    padding: 0;
+  }
+
+  #home {
+    margin: 0;
+  }
+
+  .tm-team-description-container {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .tm-team-description-container .tm-section-title,
+  #tmCarousel .tm-section-title {
+    text-transform: uppercase;
+  }
+
+  .tm-team-description-container p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .tm-banner {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  section:first-of-type .tm-content-box {
+    margin-bottom: 0;
+  }
+
+  .heading {
+    margin-bottom: 0;
+  }
+
+  .heading .padding-medium {
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+    max-width: 375px;
+    margin: 0 auto;
+  }
+
+  .heading .padding-medium h2 {
+    color: lightskyblue;
+    font-weight: 300;
+  }
+
+  .heading .padding-medium ol {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .heading .padding-medium ol li:nth-child(odd){
+    text-align: right;
+  }
+
+  .heading .padding-medium ol li:nth-child(even){
+    text-align: left;
+  }
+
+  .blocks .tm-team-description-container {
+    padding-top: 0;
+  }
+
+  #tmCarousel {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  p.carousel-description {
+    margin-bottom: 0;
+  }
+
+  .tm-footer {
+    padding-bottom: 0;
+  }
+
 }
