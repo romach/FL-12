@@ -67,6 +67,7 @@
     color: red;
     font-size: small;
     font-weight: bold;
+    font-variant: small-caps;
     vertical-align: top;
     display: inline-block;
   }
