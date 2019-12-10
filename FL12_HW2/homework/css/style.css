@@ -87,6 +87,10 @@
     text-indent: 25px;
   }
 
+  .tm-team-description-container .tm-section-title {
+    text-align: center;
+  }
+
   .gallery-container p {
     font-style: italic;
   }
