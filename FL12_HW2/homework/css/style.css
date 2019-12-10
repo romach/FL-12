@@ -88,7 +88,7 @@
     text-indent: 25px;
   }
 
-  .tm-team-description-container .tm-section-title {
+  .tm-content-box .tm-team-description-container .tm-section-title {
     text-align: center;
   }
 
@@ -140,7 +140,6 @@
   }
 
   .contact-form input,
-  /* .contact-form input:focus, */
   .contact-form textarea,
   .contact-form textarea:focus,
   .contact-form button,
