@@ -186,6 +186,8 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  padding-bottom: 210px;
 
   .section_text {
     font-family: "Source Sans Pro";
@@ -215,6 +217,9 @@ header {
       margin-bottom: 25px;
       border-radius: 5px;
       padding: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
       .section_card_img {
         width: 122%;
         border-radius: 5px;
@@ -250,8 +255,105 @@ header {
 }
 
 .section_banner {
-  margin-top: 114px;
   background-image: linear-gradient(90deg, #65950e, #2f5dcf);
   width: 1198px;
   height: 144px;
+  border-radius: 5px;
+  padding: 0 160px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -73px;
+
+  .section_banner_button {
+    background-color: #699900;
+    border: none;
+    color: #f2f3f7;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "Source Sans Pro";
+    border-radius: 3px;
+    height: 48px;
+    width: 142px;
+  }
+
+  .section_banner_heading {
+    font-family: "Source Sans Pro";
+    font-size: 30px;
+    font-weight: 700;
+    color: #2c2f3c;
+    position: relative;
+    z-index: 100;
+
+    &::after {
+      content: "start";
+      color: transparent;
+      background-color: #14a0c7;
+      position: absolute;
+      top: -12px;
+      left: 120px;
+      z-index: -1;
+      line-height: 51px;
+    }
+  }
+
+  .section_banner_text {
+    font-family: "Hind";
+    color: #c0c3ce;
+    margin-top: 16px;
+  }
+
+  .section_banner_text_wrap {
+    height: 95px;
+    padding-left: 2px;
+  }
+}
+
+.footer {
+  height: 243px;
+  background-color: #21232e;
+  color: #c0c3ce;
+  display: flex;
+  align-items: flex-end;
+  font-family: "Hind";
+}
+
+.footer-wrap {
+  max-width: 1536px;
+  margin: 0 auto;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  height: 166px;
+  align-items: center;
+}
+
+.footer_logo {
+  display: flex;
+
+  img {
+    padding-right: 15px;
+    align-self: flex-start;
+  }
+  p {
+    font-family: "Hind";
+    font-size: 23px;
+    line-height: 30px;
+    font-weight: 600;
+    text-align: center;
+    span {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 10px;
+    }
+  }
+}
+
+.footer_text {
+  width: 307px;
+  font-size: 14px;
+  line-height: 21px;
 }
