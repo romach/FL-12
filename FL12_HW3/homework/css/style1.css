@@ -89,8 +89,7 @@ video {
 body {
   background-color: #ffffff; }
 
-.header_button,
-.section_banner_button {
+.section_banner_button, .header_button {
   background-color: #699900;
   border: none;
   color: #f2f3f7;
@@ -101,7 +100,10 @@ body {
   height: 48px;
   width: 142px; }
 
-header {
+.header_button {
+  margin-right: 148px; }
+
+.header {
   background-image: url("../img/m-h-day.jpg");
   background-size: 101%;
   height: 720px;
@@ -109,17 +111,13 @@ header {
   background-repeat: no-repeat;
   padding-top: 0.05px;
   border-radius: 0% 0% 40% 0%; }
-  header .header-wrap {
+  .header .header-wrap {
     max-width: 1535px;
     margin: 0 auto;
     margin-top: 20px; }
-    header .header-wrap > div:last-child {
-      margin-top: 58px;
-      display: flex;
-      justify-content: space-between;
-      width: 490px;
-      align-items: center; }
-  header .header_heading {
+    .header .header-wrap > div:last-child {
+      margin-top: 58px; }
+  .header .header_heading {
     font-family: "Source Sans Pro";
     font-size: 71px;
     line-height: 73px;
@@ -130,7 +128,7 @@ header {
     color: #2c2f3c;
     position: relative;
     z-index: 100; }
-    header .header_heading::after {
+    .header .header_heading::after {
       content: "awesome";
       color: transparent;
       background-color: #279fc7;
@@ -139,31 +137,31 @@ header {
       left: 0px;
       z-index: -1;
       line-height: 51px; }
-  header .landing-logo {
+  .header .landing-logo {
     display: flex; }
-    header .landing-logo img {
+    .header .landing-logo img {
       padding-right: 15px;
       align-self: flex-start; }
-    header .landing-logo p {
+    .header .landing-logo p {
       font-family: "Hind";
       font-size: 23px;
       line-height: 30px;
       font-weight: 600;
       color: #2c2f3c;
       text-align: center; }
-      header .landing-logo p span {
+      .header .landing-logo p span {
         display: block;
         font-size: 10px;
         font-weight: 400;
         line-height: 10px; }
-  header .header_text {
+  .header .header_text {
     margin-top: 33px;
     font-family: "Hind";
     color: #2c2f3c;
     letter-spacing: 0.01rem;
     white-space: pre-line;
     line-height: 1.6rem; }
-  header .login {
+  .header .login {
     color: #f2f3f7;
     font-family: "Hind";
     font-size: 19px;

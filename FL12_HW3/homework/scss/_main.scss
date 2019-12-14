@@ -107,15 +107,19 @@ video {
 }
 
 body {
-  background-color: $bodyBackgroundColor;
+  background-color: map-get($colors, background);
 }
 
-.header_button,
 .section_banner_button {
-  @include button($headerButtonBackgroundColor);
+  @include button(map-get($colors, button));
 }
 
-header {
+.header_button {
+  @extend .section_banner_button;
+  margin-right: 148px;
+}
+
+.header {
   background-image: url($headerBackgroundImageUrl);
   background-size: 101%;
   height: 720px;
@@ -131,10 +135,6 @@ header {
 
     & > div:last-child {
       margin-top: 58px;
-      display: flex;
-      justify-content: space-between;
-      width: 490px;
-      align-items: center;
     }
   }
 
@@ -230,7 +230,7 @@ header {
     max-width: 1116px;
     .section_card {
       display: flex;
-      background-color: $sectionCardBackgroundColor;
+      background-color: map-get($colors, primary);
       margin-bottom: 25px;
       border-radius: 5px;
       padding: 20px;
@@ -267,7 +267,7 @@ header {
         line-height: 1.5em;
       }
       .section_link {
-        @include link($sectionLinkColor, "Hind")
+        @include link($sectionLinkColor, "Hind");
       }
     }
   }
@@ -324,7 +324,7 @@ header {
 
 .footer {
   height: 243px;
-  background-color: $footerBackgroundColor;
+  background-color: map-get($colors, primary);
   color: $footerTextColor;
   display: flex;
   align-items: flex-end;

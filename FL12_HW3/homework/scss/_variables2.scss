@@ -1,18 +1,14 @@
 $headerBackgroundImageUrl: "../img/m-h-night.jpg";
 $headerHeadingColor: #ffffff;
 $headerSelectionColor: #ff4e33;
-$landingLogoFontFamily: 'Fresca';
+$landingLogoFontFamily: "Fresca";
 $landingLogoFontColor: #ffffff;
 $headerTextFontFamily: "Fresca";
 $headerTextColor: #ffffff;
-$headerButtonBackgroundColor: #e3ac00;
 $loginFontFamily: "Source Sans Pro";
-
-$bodyBackgroundColor: #21232e;
 
 $sectionTextColor: #ffffff;
 $sectionTextSelectionColor: $headerSelectionColor;
-$sectionCardBackgroundColor: #3b3f50;
 $sectionCardImgWidth: 127%;
 $sectionCardTextColor: #c0c3ce;
 $sectionCardTextFontFamily: "Fresca";
@@ -23,12 +19,16 @@ $sectionLinkColor: #c0c3ce;
 
 $sectionBannerGradientStart: #dda306;
 $sectionBannerGradientEnd: #953051;
-$sectionBannerButtonBackgroundColor: $headerButtonBackgroundColor;
 $sectionBannerHeadingTextColor: #ffffff;
 $sectionBannerHeadingSelectionColor: $headerSelectionColor;
 $sectionBannerTextFontFamily: "Fresca";
 
-$footerBackgroundColor: #3b3f50;
 $footerTextColor: #c0c3ce;
 $footerFontFamily: "Fresca";
 $footerLogoFontFamily: "Fresca";
+
+$colors: (
+  primary: #3b3f50,
+  background: #21232e,
+  button: #e3ac00
+);
