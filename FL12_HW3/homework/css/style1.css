@@ -86,6 +86,9 @@ video {
   font: inherit;
   vertical-align: baseline; }
 
+body {
+  background-color: #ffffff; }
+
 header {
   background-image: url("../img/m-h-day.jpg");
   background-size: 101%;
@@ -173,7 +176,8 @@ header {
     font-weight: 400;
     position: relative;
     margin-top: 36px;
-    margin-bottom: 36px; }
+    margin-bottom: 36px;
+    color: #2c2f3c; }
     .section .section_text::after {
       content: "adventure";
       color: transparent;
@@ -195,7 +199,7 @@ header {
       .section .section_card_wrap .section_card:last-child {
         margin-bottom: 0; }
       .section .section_card_wrap .section_card .section_card_img {
-        width: 122%;
+        width: 126%;
         border-radius: 5px; }
       .section .section_card_wrap .section_card .section_card_right_container {
         display: flex;
@@ -213,7 +217,10 @@ header {
       .section .section_card_wrap .section_card .section_card_text {
         color: #c0c3ce;
         font-family: "Hind";
-        text-align: justify; }
+        font-weight: normal;
+        text-align: justify;
+        word-spacing: 0.1em;
+        line-height: 1.5em; }
       .section .section_card_wrap .section_card .section_link {
         color: #c0c3ce;
         font-family: "Hind"; }

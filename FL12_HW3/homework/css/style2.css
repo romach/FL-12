@@ -86,8 +86,11 @@ video {
   font: inherit;
   vertical-align: baseline; }
 
+body {
+  background-color: #21232e; }
+
 header {
-  background-image: url("../img/m-h-day.jpg");
+  background-image: url("../img/m-h-night.jpg");
   background-size: 101%;
   height: 720px;
   background-position: center center;
@@ -108,13 +111,13 @@ header {
     max-width: 770px;
     margin-top: 70px;
     letter-spacing: 0.01em;
-    color: #2c2f3c;
+    color: #ffffff;
     position: relative;
     z-index: 100; }
     header .header_heading::after {
       content: "awesome";
       color: transparent;
-      background-color: #279fc7;
+      background-color: #ff4e33;
       position: absolute;
       top: 95px;
       left: 0px;
@@ -126,11 +129,11 @@ header {
       padding-right: 15px;
       align-self: flex-start; }
     header .landing-logo p {
-      font-family: "Hind";
+      font-family: "Fresca";
       font-size: 23px;
       line-height: 30px;
       font-weight: 600;
-      color: #2c2f3c;
+      color: #ffffff;
       text-align: center; }
       header .landing-logo p span {
         display: block;
@@ -139,13 +142,13 @@ header {
         line-height: 10px; }
   header .header_text {
     margin-top: 33px;
-    font-family: "Hind";
-    color: #2c2f3c;
+    font-family: "Fresca";
+    color: #ffffff;
     letter-spacing: 0.01rem;
     white-space: pre-line;
     line-height: 1.6rem; }
   header .header_button {
-    background-color: #699900;
+    background-color: #e3ac00;
     border: none;
     color: #f2f3f7;
     font-size: 18px;
@@ -158,7 +161,7 @@ header {
     color: #f2f3f7;
     font-size: 19px;
     font-weight: 700;
-    font-family: "Hind";
+    font-family: "Source Sans Pro";
     margin-left: 148px; }
 
 .section {
@@ -173,11 +176,12 @@ header {
     font-weight: 400;
     position: relative;
     margin-top: 36px;
-    margin-bottom: 36px; }
+    margin-bottom: 36px;
+    color: #ffffff; }
     .section .section_text::after {
       content: "adventure";
       color: transparent;
-      background-color: #279fc7;
+      background-color: #ff4e33;
       position: absolute;
       z-index: -1;
       right: 10px;
@@ -188,14 +192,14 @@ header {
     max-width: 1116px; }
     .section .section_card_wrap .section_card {
       display: flex;
-      background-color: #21232e;
+      background-color: #3b3f50;
       margin-bottom: 25px;
       border-radius: 5px;
       padding: 20px; }
       .section .section_card_wrap .section_card:last-child {
         margin-bottom: 0; }
       .section .section_card_wrap .section_card .section_card_img {
-        width: 122%;
+        width: 127%;
         border-radius: 5px; }
       .section .section_card_wrap .section_card .section_card_right_container {
         display: flex;
@@ -212,14 +216,17 @@ header {
         font-size: 25px; }
       .section .section_card_wrap .section_card .section_card_text {
         color: #c0c3ce;
-        font-family: "Hind";
-        text-align: justify; }
+        font-family: "Fresca";
+        font-weight: normal;
+        text-align: justify;
+        word-spacing: 0.1em;
+        line-height: 1.5em; }
       .section .section_card_wrap .section_card .section_link {
         color: #c0c3ce;
         font-family: "Hind"; }
 
 .section_banner {
-  background-image: linear-gradient(90deg, #65950e, #2f5dcf);
+  background-image: linear-gradient(90deg, #dda306, #953051);
   width: 1198px;
   height: 144px;
   border-radius: 5px;
@@ -231,7 +238,7 @@ header {
   position: absolute;
   bottom: -73px; }
   .section_banner .section_banner_button {
-    background-color: #699900;
+    background-color: #e3ac00;
     border: none;
     color: #f2f3f7;
     font-size: 18px;
@@ -244,20 +251,20 @@ header {
     font-family: "Source Sans Pro";
     font-size: 30px;
     font-weight: 700;
-    color: #2c2f3c;
+    color: #ffffff;
     position: relative;
     z-index: 100; }
     .section_banner .section_banner_heading::after {
       content: "start";
       color: transparent;
-      background-color: #14a0c7;
+      background-color: #ff4e33;
       position: absolute;
       top: -12px;
       left: 120px;
       z-index: -1;
       line-height: 51px; }
   .section_banner .section_banner_text {
-    font-family: "Hind";
+    font-family: "Fresca";
     color: #c0c3ce;
     margin-top: 16px; }
   .section_banner .section_banner_text_wrap {
@@ -266,11 +273,11 @@ header {
 
 .footer {
   height: 243px;
-  background-color: #21232e;
+  background-color: #3b3f50;
   color: #c0c3ce;
   display: flex;
   align-items: flex-end;
-  font-family: "Hind"; }
+  font-family: "Fresca"; }
 
 .footer-wrap {
   max-width: 1536px;
@@ -287,7 +294,7 @@ header {
     padding-right: 15px;
     align-self: flex-start; }
   .footer_logo p {
-    font-family: "Hind";
+    font-family: "Fresca";
     font-size: 23px;
     line-height: 30px;
     font-weight: 600;
