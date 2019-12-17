@@ -1,0 +1,350 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  line-height: 1;
+  background-color: #fff;
+  padding-top: 0.05px;
+  font-family: "Merriweather", serif;
+}
+
+header {
+  background-color: #fff;
+  height: 86px;
+  position: fixed;
+  width: 100%;
+  margin-bottom: 0.5px;
+}
+header .header-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  line-height: 86px;
+}
+header .header-content .title {
+  font-family: "Merriweather", serif;
+  text-transform: uppercase;
+  color: #777777;
+  font-size: 18px;
+  letter-spacing: 0.22em;
+}
+header .header-content nav ul {
+  display: flex;
+}
+header .header-content nav ul li.nav-link a {
+  line-height: 86px;
+  color: #777777;
+  font-family: "Merriweather", serif;
+  font-size: 14px;
+  padding-left: 22px;
+  padding-right: 22px;
+  text-decoration: none;
+  display: block;
+  letter-spacing: 0.1em;
+}
+header .header-content nav ul li.nav-link a:hover {
+  color: #bfba55;
+}
+header .header-content nav ul li.nav-link:last-child a {
+  padding-right: 9px;
+}
+
+.hero {
+  height: calc(100vh - 86px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/home-bg.jpg");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  margin-top: 86px;
+}
+.hero .hero-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Merriweather", serif;
+  height: 198px;
+  margin-top: 62px;
+}
+.hero .hero-content .hero-title {
+  text-align: center;
+}
+.hero .hero-content .hero-title .main {
+  font-weight: bold;
+}
+.hero .hero-content .hero-title .main {
+  font-size: 16px;
+}
+@media screen and (min-width: 320px) {
+  .hero .hero-content .hero-title .main {
+    font-size: calc(16px + 46 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  .hero .hero-content .hero-title .main {
+    font-size: 62px;
+  }
+}
+.hero .hero-content .hero-title .secondary {
+  font-size: 12px;
+  color: #bfba55;
+  margin-top: 26px;
+  letter-spacing: 0.15em;
+}
+.hero .hero-content .hero-more-button {
+  width: 160px;
+  height: 45px;
+  border-radius: 22px;
+  background-color: #fff;
+  border: none;
+  font-family: "Merriweather", serif;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+main {
+  max-width: 945px;
+  margin: 0 auto;
+}
+main article {
+  padding-top: 85px;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 63px;
+}
+main article:first-child {
+  padding-top: 112px;
+}
+main article:last-child {
+  padding-bottom: 112px;
+  border-bottom: none;
+}
+main article .poster {
+  width: 100%;
+  margin-bottom: 40px;
+}
+main article .article-title {
+  font-size: 27px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+main article .info {
+  display: flex;
+  font-family: "IBM Plex Serif", serif;
+  align-items: center;
+  color: #777777;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+main article .info .author {
+  display: flex;
+  align-items: center;
+}
+main article .info .author .avatar {
+  height: 42px;
+  width: 42px;
+  border-radius: 21px;
+  margin-right: 8px;
+}
+main article .info .author .name {
+  margin-right: 15px;
+}
+main article .info .date {
+  margin-right: 15px;
+}
+main article .text {
+  margin-bottom: 38px;
+  color: #777777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6rem;
+}
+main article .continue-reading-button {
+  width: 160px;
+  height: 45px;
+  border-radius: 22px;
+  background-color: #fff;
+  border: none;
+  font-family: "Merriweather", serif;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  border-radius: 25px;
+  font-size: 12px;
+  border: 1px solid #777777;
+  height: 50px;
+  width: 190px;
+}
+
+footer {
+  background-color: #000000;
+  height: 357px;
+}
+footer .footer-content {
+  padding-top: 100px;
+  max-width: 944px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer-content .left-column {
+  width: 472px;
+}
+footer .footer-content .left-column .title {
+  color: #fff;
+  font-family: "Merriweather", serif;
+  font-size: 28px;
+}
+footer .footer-content .left-column .text {
+  color: #777777;
+  font-size: 0.91em;
+  white-space: pre-line;
+  line-height: 1.72em;
+}
+footer .footer-content .right-column {
+  width: 362px;
+}
+footer .footer-content .right-column .title {
+  color: #fff;
+  font-family: "Merriweather", serif;
+  font-size: 28px;
+}
+footer .footer-content .right-column .text {
+  color: #777777;
+  font-size: 0.91em;
+  white-space: pre-line;
+  line-height: 1.72em;
+}
+footer .footer-content .right-column .text {
+  line-height: 1.9em;
+}
