@@ -6,8 +6,8 @@ const c = prompt('Input c: ')
 if (
   isNaN(isFinite(a) && a !== null && a.trim().length > 0 ? Number(a) : NaN) ||
   a === 0 ||
-  isNaN(isFinite(a) && a !== null && a.trim().length > 0 ? Number(a) : NaN) ||
-  isNaN(isFinite(a) && a !== null && a.trim().length > 0 ? Number(a) : NaN)
+  isNaN(isFinite(b) && b !== null && b.trim().length > 0 ? Number(b) : NaN) ||
+  isNaN(isFinite(c) && c !== null && c.trim().length > 0 ? Number(c) : NaN)
 ) {
   console.log('Invalid input data')
 } else {
