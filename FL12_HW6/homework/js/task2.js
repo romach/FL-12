@@ -19,7 +19,6 @@ if (
   const a = parseInt(aInput)
   const b = parseInt(bInput)
   const c = parseInt(cInput)
-
   if (a === 0 || b === 0 || c === 0) {
     alert('A triangle must have 3 sides with a positive definite length')
   } else if (a + b <= c || a + c <= b || b + c <= a) {
