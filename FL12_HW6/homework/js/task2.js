@@ -5,10 +5,13 @@ const bInput = prompt('Enter b:')
 const cInput = prompt('Enter c:')
 if (
   aInput === '' ||
+  aInput === null ||
   aInput === undefined ||
   bInput === '' ||
+  bInput === null ||
   bInput === undefined ||
   cInput === '' ||
+  cInput === null ||
   cInput === undefined
 ) {
   alert('input values should be ONLY numbers')
