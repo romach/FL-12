@@ -4,7 +4,6 @@ function makeNumber(line) {
     return isNaN(parsedLetter) ? accumulator : accumulator + parsedLetter;
   }, '');
 }
-
 function countNumbers(line) {
   const lineWithNumbers = makeNumber(line);
   return [...lineWithNumbers].reduce((accumulator, currentValue) => {

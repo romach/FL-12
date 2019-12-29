@@ -43,14 +43,21 @@ Possible prize on current attempt: ${prizes[currentAttemptNumber]}$`)
       maximumGuessRangeSize = INITIAL_MAXIMUM_GUESS_RANGE_SIZE;
       totalUserPrize = 0;
     } else {
-      totalUserPrize += prizes[currentAttemptNumber];
+      totalUserPrize += prizes[currentAttemptNumber - 1];
       const continueConfirmation = confirm(`Congratulation, you won!
 Your prize is: ${totalUserPrize} $.
 Do you want to continue?`);
       if (!continueConfirmation) {
         alert(
           `Thank you for your participation. Your prize is: ${totalUserPrize} $`
-        );
+          );
+        totalUserPrize = 0;
+        maximumGuessRangeSize = INITIAL_MAXIMUM_GUESS_RANGE_SIZE;
+        prizes = {
+          1: 100,
+          2: 50,
+          3: 25
+        }
         gameIsOn = confirm('Do you want to play again?');
       } else {
         const TWO = 2;
