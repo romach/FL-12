@@ -2,7 +2,7 @@ function convert(...args) {
   const result = [];
   for (const argument of args) {
     if (typeof argument === 'number') {
-      result.push(argument + '');
+      result.push(String(argument));
     } else {
       result.push(parseInt(argument));
     }
@@ -100,9 +100,7 @@ function makeListFromRange(range) {
 
 function getArrayOfKeys(objects, keyName) {
   const result = [];
-  for (const object of objects) {
-    result.push(object[keyName]);
-  }
+  executeforEach(objects, object => result.push(object[keyName]));
   return result;
 }
 const actors = [
