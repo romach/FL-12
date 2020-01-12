@@ -14,7 +14,7 @@ function convert(...args) {
 {
   const a = 2;
   const b = 3;
-  console.assert(JSON.stringify(convert('1', a, b, '4')) === '[1,"2","3",4]');
+  console.log(convert('1', a, b, '4'));
 }
 
 function executeforEach(list, callback) {
@@ -45,12 +45,10 @@ function mapArray(list, callback) {
   const a = 2;
   const b = 8;
   const c = 3;
-  console.assert(
-    JSON.stringify(
-      mapArray([a, '5', b], function(el) {
-        return el + c;
-      })
-    ) === '[5,8,11]'
+  console.log(
+    mapArray([a, '5', b], function(el) {
+      return el + c;
+    })
   );
 }
 
@@ -67,12 +65,10 @@ function filterArray(list, callback) {
   const a = 2;
   const b = 5;
   const c = 8;
-  console.assert(
-    JSON.stringify(
-      filterArray([a, b, c], function(el) {
-        return el % a === 0;
-      })
-    ) === '[2,8]'
+  console.log(
+    filterArray([a, b, c], function(el) {
+      return el % a === 0;
+    })
   );
 }
 
@@ -83,7 +79,7 @@ function flipOver(input) {
   }
   return result;
 }
-console.assert(flipOver('hey world') === 'dlrow yeh');
+console.log(flipOver('hey world'));
 
 function makeListFromRange(range) {
   const result = [];
@@ -95,7 +91,7 @@ function makeListFromRange(range) {
 {
   const a = 2;
   const b = 7;
-  console.assert(JSON.stringify(makeListFromRange([a, b])) === '[2,3,4,5,6,7]');
+  console.log(makeListFromRange([a, b]));
 }
 
 function getArrayOfKeys(objects, keyName) {
@@ -107,9 +103,7 @@ const actors = [
   { name: 'tommy', age: 36 },
   { name: 'lee', age: 28 }
 ];
-console.assert(
-  JSON.stringify(getArrayOfKeys(actors, 'name')) === '["tommy","lee"]'
-);
+console.log(getArrayOfKeys(actors, 'name'));
 
 function substitute(numbers) {
   return mapArray(numbers, element => {
@@ -124,9 +118,7 @@ function substitute(numbers) {
   const d = 2;
   const e = 31;
   const f = 29;
-  console.assert(
-    JSON.stringify(substitute([a, b, c, d, e, f])) === '[58,"*",48,"*",31,"*"]'
-  );
+  console.log(substitute([a, b, c, d, e, f]));
 }
 
 function getPastDay(date, daysSubstracted) {
@@ -138,15 +130,12 @@ function getPastDay(date, daysSubstracted) {
   const year = 2019;
   const day = 2;
   const date = new Date(year, 0, day);
-  const backupDate = new Date(date.getTime());
   const a = 1;
-  const b = 31;
   const c = 2;
   const d = 365;
-  console.assert(getPastDay(date, a) === 1);
-  console.assert(getPastDay(date, c) === b);
-  console.assert(getPastDay(date, d) === c);
-  console.assert(date.toString() === backupDate.toString());
+  console.log(getPastDay(date, a));
+  console.log(getPastDay(date, c));
+  console.log(getPastDay(date, d));
 }
 
 function formatDate(inputDate) {
@@ -156,10 +145,11 @@ function formatDate(inputDate) {
   const hours = inputDate.getHours();
   const minutes = inputDate.getMinutes();
   const TWO_DIGITS_NUMBER = 10;
-  return `${year}/${month + 1}/${dayOfMonth} ` +
-    `${hours < TWO_DIGITS_NUMBER ? '0' : ''}${hours}:${minutes < TWO_DIGITS_NUMBER ? '0' : ''}${minutes}`;
+  return (
+    `${year}/${month + 1}/${dayOfMonth} ` +
+    `${hours < TWO_DIGITS_NUMBER ? '0' : ''}${hours}:` +
+    `${minutes < TWO_DIGITS_NUMBER ? '0' : ''}${minutes}`
+  );
 }
-console.assert(
-  formatDate(new Date('6/15/2018 09:15:00')) === '2018/6/15 09:15'
-);
+console.log(formatDate(new Date('6/15/2018 09:15:00')));
 console.log(formatDate(new Date()));
