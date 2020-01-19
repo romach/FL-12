@@ -60,17 +60,3 @@ function battle(attacker, defender) {
     return fighters.find(fighter => fighter.getHealth() === 0);
   }
 }
-
-const myFighter = new Fighter({
-  name: 'Maximus',
-  damage: 20,
-  hp: 100,
-  strength: 30,
-  agility: 25
-});
-
-console.log(myFighter.getName());
-console.log(myFighter.getDamage());
-console.log(myFighter.getStrength());
-console.log(myFighter.getAgility());
-console.log(myFighter.getHealth());
