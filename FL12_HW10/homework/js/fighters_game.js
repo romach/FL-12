@@ -3,9 +3,8 @@ function Fighter({ name, damage, hp, strength, agility }) {
   let winsCount = 0;
   let lossesCount = 0;
   return {
-    getName: () => {
-      return name;
-    },
+    __proto__: this,
+    getName: () => name,
     getDamage: () => damage,
     getStrength: () => strength,
     getAgility: () => agility,
