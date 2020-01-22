@@ -1,0 +1,46 @@
+/* Todo: your styles go here*/
+.material-icons.md-18 {
+  font-size: 18px;
+}
+ul {
+  padding-left: 0;
+}
+li {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.caption {
+  height: 20px;
+  cursor: pointer;
+}
+.caption > i {
+  vertical-align: text-top;
+}
+.caption:hover {
+  background-color: #efefef;
+}
+ul > li.empty {
+  padding-left: 0;
+  font-style: italic;
+}
+.folder > .caption > i {
+  color: #edbc0b;
+}
+.folder > .caption > i::before {
+  content: 'folder';
+}
+.folder > ul {
+  display: none;
+}
+.folder.folder-opened > ul {
+  display: block;
+}
+.folder.folder-opened > .caption > i::before {
+  content: 'folder_open';
+}
+.file > .caption > i {
+  color: #bbbbbb;
+}
+.file > .caption > i::before {
+  content: 'insert_drive_file';
+}
