@@ -121,9 +121,14 @@ loadMainPage();
 function loadMainPage() {
   const container = new Div('.container').addChildren(
     new H1('Main page'),
-    new Button('Add new set', '.new-set').addEventListener('click', function() {
-      location.hash = '#/add';
-    }),
+    new Div('.subHeader').addChildren(
+      new Button('Add new set', '.new-set').addEventListener(
+        'click',
+        function() {
+          location.hash = '#/add';
+        }
+      )
+    ),
     new Div('#sets')
   );
   root.appendChild(container.node);
@@ -151,17 +156,19 @@ function loadSetPage(pageTitle, set, saveCallback) {
   const termsDiv = new Div('#terms');
   const container = new Div('.container').addChildren(
     new H1(pageTitle),
-    new Input('Name', set.name).addEventListener('input', function(event) {
-      set.name = event.target.value.trim();
-    }),
-    new Button('Add term').addEventListener('click', function() {
-      set.terms.push({ term: '', definition: '' });
-      updateTermsList();
-    }),
-    saveButton,
-    new Button('Cancel').addEventListener('click', function() {
-      location.hash = '#';
-    }),
+    new Div('.setProperties').addChildren(
+      new Input('Name', set.name).addEventListener('input', function(event) {
+        set.name = event.target.value.trim();
+      }),
+      new Button('Add term').addEventListener('click', function() {
+        set.terms.push({ term: '', definition: '' });
+        updateTermsList();
+      }),
+      saveButton,
+      new Button('Cancel').addEventListener('click', function() {
+        location.hash = '#';
+      })
+    ),
     termsDiv
   );
   root.appendChild(container.node);

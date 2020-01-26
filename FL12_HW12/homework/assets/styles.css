@@ -1,14 +1,31 @@
 /* Your styles go here */
-
 .termSet {
   cursor: pointer;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid lightgrey;
 }
-
+.termSet div, .termSet button {
+  margin: 5px;
+}
 .termSet:hover {
   background-color: lightyellow;
 }
-
 .termSet.studied {
   color: gray;
   font-style: italic;
+}
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+.subHeader {
+  display: flex;
+  justify-content: flex-end;
+}
+.setProperties, .term {
+  padding: 5px;
+}
+.setProperties input, .setProperties button, .term input, .term button {
+  margin: 5px;
 }
