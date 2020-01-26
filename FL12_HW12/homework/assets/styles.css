@@ -1,2 +1,14 @@
 /* Your styles go here */
 
+.termSet {
+  cursor: pointer;
+}
+
+.termSet:hover {
+  background-color: lightyellow;
+}
+
+.termSet.studied {
+  color: gray;
+  font-style: italic;
+}

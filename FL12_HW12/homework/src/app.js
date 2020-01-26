@@ -28,6 +28,9 @@ class Tag {
     this.node.addEventListener(...args);
     return this;
   }
+  addClass(className) {
+    this.node.classList.add(className);
+  }
 }
 
 class Div extends Tag {
@@ -62,19 +65,31 @@ class TermSet {
   constructor(set) {
     this.set = set;
     this.name = set.name;
-    this.node = new Div().addChildren(
-      new Div().addText(set.name),
-      new Button('Edit').addEventListener('click', function() {
-        removeChildrenOf(root);
-        loadSetPage('Modify set', set, saveSets);
-      }),
-      new Button('Remove').addEventListener('click', () => {
-        const removingElementIndex = sets.findIndex(set => set === this.set);
-        sets.splice(removingElementIndex, 1);
+    this.node = new Div('.termSet')
+      .addEventListener('click', () => {
+        console.log('Mark as read');
+        this.set.studied = !this.set.studied;
         saveSets();
         refreshSets();
       })
-    );
+      .addChildren(
+        new Div().addText(set.name),
+        new Button('Edit').addEventListener('click', function(event) {
+          event.stopPropagation();
+          removeChildrenOf(root);
+          loadSetPage('Modify set', set, saveSets);
+        }),
+        new Button('Remove').addEventListener('click', () => {
+          event.stopPropagation();
+          const removingElementIndex = sets.findIndex(set => set === this.set);
+          sets.splice(removingElementIndex, 1);
+          saveSets();
+          refreshSets();
+        })
+      );
+    if (this.set.studied) {
+      this.node.addClass('studied');
+    }
   }
 }
 
@@ -182,9 +197,21 @@ function refreshSets() {
   sets = fetchSetsFromStorage();
   const setsNode = document.getElementById('sets');
   removeChildrenOf(setsNode);
-  sets.forEach(set => {
-    setsNode.appendChild(new TermSet(set).node.node);
-  });
+  sets
+    .concat()
+    .sort((a, b) => {
+      let result;
+      if (Boolean(a.studied) === Boolean(b.studied)) {
+        result = b.id - a.id;
+      } else {
+        const MINUS_ONE = -1;
+        result = a.studied ? 1 : MINUS_ONE;
+      }
+      return result;
+    })
+    .forEach(set => {
+      setsNode.appendChild(new TermSet(set).node.node);
+    });
 }
 
 function fetchSetsFromStorage() {
