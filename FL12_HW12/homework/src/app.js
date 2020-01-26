@@ -5,10 +5,24 @@ window.onhashchange = function() {
   const hash = location.hash;
   const modifyPageRegex = /#\/modify\/(\d+)/;
   if (hash === '#/add') {
-    console.log('Add terms set')
-  } else if(modifyPageRegex.test(hash)) {
-    const setId = hash.match(modifyPageRegex)[1];
-    console.log(setId);
+    removeChildrenOf(root);
+    loadSetPage('Add new set', { name: '', terms: [] }, set => {
+      const savedSets = fetchSetsFromStorage();
+      const ZERO = 0;
+      const newSetId = savedSets.length
+        ? Math.max(...savedSets.map(set => set.id)) + 1
+        : ZERO;
+      set.id = newSetId;
+      addNewSet(set);
+    });
+  } else if (modifyPageRegex.test(hash)) {
+    const setId = parseInt(hash.match(modifyPageRegex)[1]);
+    const set = sets.find(element => element.id === setId);
+    removeChildrenOf(root);
+    loadSetPage('Modify set', set, saveSets);
+  } else if (hash === '') {
+    removeChildrenOf(root);
+    loadMainPage();
   }
 };
 
@@ -77,7 +91,6 @@ class TermSet {
     this.name = set.name;
     this.node = new Div('.termSet')
       .addEventListener('click', () => {
-        console.log('Mark as read');
         this.set.studied = !this.set.studied;
         saveSets();
         refreshSets();
@@ -86,8 +99,7 @@ class TermSet {
         new Div().addText(set.name),
         new Button('Edit').addEventListener('click', function(event) {
           event.stopPropagation();
-          removeChildrenOf(root);
-          loadSetPage('Modify set', set, saveSets);
+          location.hash = `#/modify/${set.id}/`;
         }),
         new Button('Remove').addEventListener('click', () => {
           event.stopPropagation();
@@ -110,16 +122,7 @@ function loadMainPage() {
   const container = new Div('.container').addChildren(
     new H1('Main page'),
     new Button('Add new set', '.new-set').addEventListener('click', function() {
-      removeChildrenOf(root);
-      loadSetPage('Add new set', { name: '', terms: [] }, set => {
-        const savedSets = fetchSetsFromStorage();
-        const ZERO = 0;
-        const newSetId = savedSets.length
-          ? Math.max(...savedSets.map(set => set.id)) + 1
-          : ZERO;
-        set.id = newSetId;
-        addNewSet(set);
-      });
+      location.hash = '#/add';
     }),
     new Div('#sets')
   );
@@ -142,8 +145,7 @@ function loadSetPage(pageTitle, set, saveCallback) {
         }
       }
       saveCallback(set);
-      removeChildrenOf(root);
-      loadMainPage();
+      location.hash = '#';
     }
   );
   const termsDiv = new Div('#terms');
@@ -158,8 +160,7 @@ function loadSetPage(pageTitle, set, saveCallback) {
     }),
     saveButton,
     new Button('Cancel').addEventListener('click', function() {
-      removeChildrenOf(root);
-      loadMainPage();
+      location.hash = '#';
     }),
     termsDiv
   );
