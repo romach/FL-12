@@ -1,6 +1,16 @@
 // Your code goes here
 const root = document.getElementById('root');
 let sets = [];
+window.onhashchange = function() {
+  const hash = location.hash;
+  const modifyPageRegex = /#\/modify\/(\d+)/;
+  if (hash === '#/add') {
+    console.log('Add terms set')
+  } else if(modifyPageRegex.test(hash)) {
+    const setId = hash.match(modifyPageRegex)[1];
+    console.log(setId);
+  }
+};
 
 // custom classes
 class Tag {
