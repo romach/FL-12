@@ -1,0 +1,54 @@
+@import "variables";
+
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-nav .nav-link {
+    padding: 1rem;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+  }
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  background-color: @blue;
+  color: white;
+}
+
+h1,
+h2 {
+  color: @blue;
+}
+
+header {
+  h1,
+  h2 {
+    border-bottom: 1px solid @blue;
+  }
+}
+
+.related-classes {
+  color: white;
+}
+
+.colored-card(@color) {
+  border-color: @color;
+
+  .card-body {
+    background-color: @color;
+  }
+}
+
+.card.cardio {
+  .colored-card(@red);
+}
+
+.card.fitness {
+  .colored-card(@blue);
+}
+
+.card.zumba {
+  .colored-card(@orange);
+}
+
+.card.bootcamp {
+  .colored-card(@green);
+}
