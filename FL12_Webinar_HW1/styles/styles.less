@@ -13,16 +13,15 @@
   color: white;
 }
 
-h1,
-h2 {
+.class-description__header,
+.class-description__title,
+.related-classes__header {
   color: @blue;
 }
 
-header {
-  h1,
-  h2 {
-    border-bottom: 1px solid @blue;
-  }
+.class-description__header,
+.related-classes__header {
+  border-bottom: 1px solid @blue;
 }
 
 .related-classes {
@@ -37,18 +36,18 @@ header {
   }
 }
 
-.card.cardio {
+.related-classes__cardio {
   .colored-card(@red);
 }
 
-.card.fitness {
+.related-classes__fitness {
   .colored-card(@blue);
 }
 
-.card.zumba {
+.related-classes__zumba {
   .colored-card(@orange);
 }
 
-.card.bootcamp {
+.related-classes__bootcamp {
   .colored-card(@green);
 }

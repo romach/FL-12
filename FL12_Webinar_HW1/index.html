@@ -9,14 +9,14 @@
     <script src="./js/less.min.js"></script>
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom">
+    <header class="header">
+      <nav class="header__navigation navbar navbar-expand-md navbar-light bg-light border-bottom">
         <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="./img/logo.png" alt="logo" />
+          <a class="header__logo navbar-brand" href="#">
+            <img class="header__logo-image" src="./img/logo.png" alt="logo" />
           </a>
           <button
-            class="navbar-toggler"
+            class="header__mobile-menu-toggler navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarNavAltMarkup"
@@ -24,13 +24,13 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span class="header__mobile-menu-icon navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a href="#" class="nav-item nav-link active">Classes</a>
-              <a href="#" class="nav-item nav-link">About us</a>
-              <a href="#" class="nav-item nav-link">Contact us</a>
+          <div class="header__collapsible-links collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="header__links navbar-nav">
+              <a href="#" class="header__link-item--active nav-item nav-link active">Classes</a>
+              <a href="#" class="header__link-item nav-item nav-link">About us</a>
+              <a href="#" class="header__link-item nav-item nav-link">Contact us</a>
             </div>
           </div>
         </div>
@@ -41,18 +41,18 @@
         <section class="class-description">
           <div class="row">
             <div class="col">
-              <header class="mt-4 pb-3">
-                <h1 class="pb-1">Yoga Pilates</h1>
+              <header class="class-description__header mt-4 mb-4">
+                <h1 class="mb-0">Yoga Pilates</h1>
               </header>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-8">
-              <img class="img-fluid" src="./img/yoga.jpg" alt="yoga-logo" />
+              <img class="class-description__image img-fluid" src="./img/yoga.jpg" alt="yoga-logo" />
             </div>
             <div class="col-lg-4">
-              <h2 class="mt-4">Class description</h2>
-              <p>
+              <h2 class="mt-4 class-description__title">Class description</h2>
+              <p class="class-description__text">
                 This workout uses a series of exercise routines designed to
                 increase your core strength & improve your posture, energy, &
                 flexibility. Pilates work is powered by breath, flow, &
@@ -71,16 +71,16 @@
           </div>
         </section>
         <section class="related-classes">
-          <div class="row mb-3">
+          <div class="row">
             <div class="col">
-              <header class="mt-4">
-                <h2 class="pb-1">Related classes</h2>
+              <header class="related-classes__header mt-4 mb-3">
+                <h2 class="mb-0">Related classes</h2>
               </header>
             </div>
           </div>
           <div class="row">
             <div class="col-6 col-md-3 mb-4">
-              <div class="card rounded-0 cardio">
+              <div class="related-classes__cardio card rounded-0 cardio">
                 <img
                   src="./img/cardio-kickbox.jpg"
                   class="card-img-top rounded-0"
@@ -92,7 +92,7 @@
               </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
-              <div class="card rounded-0 fitness">
+              <div class="related-classes__fitness card rounded-0 fitness">
                 <img
                   src="./img/fitness.jpg"
                   class="card-img-top rounded-0"
@@ -104,7 +104,7 @@
               </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
-              <div class="card rounded-0 zumba">
+              <div class="related-classes__zumba card rounded-0 zumba">
                 <img
                   src="./img/zumba.jpg"
                   class="card-img-top rounded-0"
@@ -116,7 +116,7 @@
               </div>
             </div>
             <div class="col-6 col-md-3 mb-4">
-              <div class="card rounded-0 bootcamp">
+              <div class="related-classes__bootcamp card rounded-0 bootcamp">
                 <img
                   src="./img/bootcamp.jpg"
                   class="card-img-top rounded-0"
