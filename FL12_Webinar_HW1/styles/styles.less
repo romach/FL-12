@@ -1,16 +1,16 @@
 @import "variables";
 
-@media (min-width: 768px) {
-  .navbar-expand-md .navbar-nav .nav-link {
-    padding: 1rem;
-    margin-top: -1rem;
-    margin-bottom: -1rem;
-  }
+.header__navigation {
+  min-height: 57px;
 }
 
-.navbar-light .navbar-nav .nav-link.active {
-  background-color: @blue;
-  color: white;
+.navbar-light {
+  .navbar-nav {
+    .nav-link.active {
+      background-color: @blue;
+      color: white;
+    }
+  }
 }
 
 .class-description__header,
