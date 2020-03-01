@@ -9,6 +9,7 @@ class Post {
         </div>
       `;
   }
+  
   constructor(postJson) {
     this.post = postJson;
     this.post.body = this.post.body.replace("\n", "<br/>");
