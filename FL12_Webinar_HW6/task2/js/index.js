@@ -1,6 +1,7 @@
 const $list = $(".list");
 const $input = $("#add-input");
 const $add = $("#add-submit");
+const $search = $("#search-input");
 
 const todos = [];
 
@@ -10,8 +11,22 @@ $add.click(function(event) {
     text: $input.val(),
     done: false
   };
-  $list.append($("<li></li>").todoItem(todos, newTodo));
+  $list.append($('<li class="item"></li>').todoItem(todos, newTodo));
   $("#add-input").val("");
+});
+
+$search.keyup(function({ target: { value: searchedText } }) {
+  if (searchedText.trim().length === 0) {
+    $list.children().show();
+  } else {
+    $list.children().each(function() {
+      if ($(this).todoHasText(searchedText)) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  }
 });
 
 (function($) {
@@ -21,7 +36,6 @@ $add.click(function(event) {
         .children()
         .index(this);
     todos.push(currentTodo);
-    this.addClass("item");
     $text = $(`<span class="item-text">${currentTodo.text}</span>`);
     $text.click(() => {
       const todoIndex = getCurrentTodoIndex();
@@ -37,5 +51,10 @@ $add.click(function(event) {
     this.append($text);
     this.append($remove);
     return this;
+  };
+  $.fn.todoHasText = function(text) {
+    return this.find(".item-text")
+      .text()
+      .includes(text);
   };
 })(jQuery);
