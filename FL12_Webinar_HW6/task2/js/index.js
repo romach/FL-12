@@ -2,17 +2,7 @@ const $list = $(".list");
 const $input = $("#add-input");
 const $add = $("#add-submit");
 
-const todos = [
-  // Example todos:
-  // {
-  //   text: "Buy milk",
-  //   done: false
-  // },
-  // {
-  //   text: "Play with dog",
-  //   done: true
-  // }
-];
+const todos = [];
 
 $add.click(function(event) {
   event.preventDefault();
