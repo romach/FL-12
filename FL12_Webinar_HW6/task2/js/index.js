@@ -3,34 +3,16 @@ const $input = $("#add-input");
 const $add = $("#add-submit");
 
 const todos = [
-  {
-    text: "Buy milk",
-    done: false
-  },
-  {
-    text: "Play with dog",
-    done: true
-  }
+  // Example todos:
+  // {
+  //   text: "Buy milk",
+  //   done: false
+  // },
+  // {
+  //   text: "Play with dog",
+  //   done: true
+  // }
 ];
-
-const removeCallback = function() {
-  const todoIndex = $(".list li").index($(this).parent());
-  todos.splice(todoIndex, 1);
-  $(this)
-    .parent()
-    .remove();
-};
-$(".item-remove").click(removeCallback);
-
-const doneCallback = function() {
-  const todoIndex = $(".list li").index($(this).parent());
-  todos[todoIndex].done = !todos[todoIndex].done;
-  $(this)
-    .parent()
-    .find(".item-text")
-    .toggleClass("done");
-};
-$(".item-text").click(doneCallback);
 
 $add.click(function(event) {
   event.preventDefault();
@@ -38,14 +20,32 @@ $add.click(function(event) {
     text: $input.val(),
     done: false
   };
-  todos.push(newTodo);
-  $text = $(`<span class="item-text">${newTodo.text}</span>`);
-  $text.click(doneCallback);
-  $remove = $(`<button class="item-remove">Remove</button>`);
-  $remove.click(removeCallback);
-  $item = $(`<li class="item"></li>`);
-  $item.append($text);
-  $item.append($remove);
-  $list.append($item);
+  $list.append($("<li></li>").todoItem(todos, newTodo));
   $("#add-input").val("");
 });
+
+(function($) {
+  $.fn.todoItem = function(todos, currentTodo) {
+    const getCurrentTodoIndex = () =>
+      this.parent()
+        .children()
+        .index(this);
+    todos.push(currentTodo);
+    this.addClass("item");
+    $text = $(`<span class="item-text">${currentTodo.text}</span>`);
+    $text.click(() => {
+      const todoIndex = getCurrentTodoIndex();
+      todos[todoIndex].done = !todos[todoIndex].done;
+      this.find(".item-text").toggleClass("done");
+    });
+    $remove = $(`<button class="item-remove">Remove</button>`);
+    $remove.click(() => {
+      const todoIndex = getCurrentTodoIndex();
+      todos.splice(todoIndex, 1);
+      this.remove();
+    });
+    this.append($text);
+    this.append($remove);
+    return this;
+  };
+})(jQuery);
