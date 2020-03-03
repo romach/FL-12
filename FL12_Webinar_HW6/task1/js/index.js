@@ -35,17 +35,17 @@ $(".list")
 $("#list-1 li:hidden:not(.cloned)").show();
 
 // hide empty li
-$("li:empty").hide();
+$("#list-1 li:empty").hide();
 
 // in #list-3
 // for all even li set margin-left -20px
 $('[id="#list-3"] li:even').css({ "margin-left": -20 });
 
 // for the first li set any different color
-$("li:first").css({ color: "red" });
+$('[id="#list-3"] li:first').css({ color: "red" });
 
 // for all li with index > 5 set color to #ccc
-$("li:gt(5)").css({ color: "#ccc" });
+$('[id="#list-3"] li:gt(5)').css({ color: "#ccc" });
 
 // show ul which is parent
 $("ul:parent").css({ color: "green" });
