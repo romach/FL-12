@@ -48,7 +48,7 @@ $("li:first").css({ color: "red" });
 $("li:gt(5)").css({ color: "#ccc" });
 
 // show ul which is parent
-$("ul:parent").show();
+$("ul:parent").css({ color: "green" });
 
 // for li wich has 'em' add red color
 $("li:has(em)").css({ color: "red" });
@@ -92,4 +92,4 @@ $('img[src*="cat"]').show();
 // for .mbox with index 3 set padding-top 50px
 $(".mbox:nth-child(3)").css({ "padding-top": 50 });
 // for first div wraper for img set float left and border red
-$("img").parent().css({float:"left", "border": "1px solid red"})
+$("img").wrap("<div></div>").parent().first().css({float:"left", "border": "1px solid red"})
