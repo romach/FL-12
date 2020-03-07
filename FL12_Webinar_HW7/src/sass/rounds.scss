@@ -1,0 +1,14 @@
+.round {
+  &-result {
+    font-weight: 700;
+    &-win {
+      color: green;
+    }
+    &-lose {
+      color: red;
+    }
+    &-draw {
+      color: orange;
+    }
+  }
+}

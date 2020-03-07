@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper, or Scissors</title>
+  </head>
+  <body>
+    <div class="container">
+      <header><h1>Let’s play!</h1></header>
+      <section>
+        <div class="rules">
+          <h2>Rules</h2>
+          <ol>
+            <li>Scissors beats a paper</li>
+            <li>Paper beats rock</li>
+            <li>Rock beats scissors</li>
+            <li>And we play up to three wins</li>
+          </ol>
+        </div>
+      </section>
+      <section>
+        <a href="#" class="reset">Reset</a>
+        <div class="buttons">
+          <div class="button button-rock" data-choice="rock">
+            <span>Rock</span>
+          </div>
+          <div class="button button-paper" data-choice="paper">
+            <span>Paper</span>
+          </div>
+          <div class="button button-scissors" data-choice="scissors">
+            <span>Scissors</span>
+          </div>
+        </div>
+      </section>
+      <section class="rounds"></section>
+      <section class="final-result"></section>
+    </div>
+  </body>
+</html>

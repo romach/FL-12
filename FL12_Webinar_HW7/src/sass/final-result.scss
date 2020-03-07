@@ -1,0 +1,11 @@
+.final-result {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  &-win {
+    color: green;
+  }
+  &-lose {
+    color: red;
+  }
+}
