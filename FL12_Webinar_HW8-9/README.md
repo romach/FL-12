@@ -1,0 +1,34 @@
+Project structure:
+
+- App
+  - header
+  - div.container
+  - FilteredCoursesList
+    - Search
+      - div.input
+      - div.button
+    - CoursesList
+      - Course
+        - date
+        - name
+        - description
+        - duration
+  - CourseInformation
+    - div.header
+    - form
+      - title
+      - description
+      - duration
+      - authors
+      - DatePicker
+      - button
+      - button
+  - footer
+
+Data model
+- id
+- title
+- description
+- duration
+- authors
+- date
