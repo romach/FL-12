@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:200,400,600&display=swap');
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  color: #3d3d3d;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  background-color: #f0f0f4;
+}
+#root {
+  display: grid;
+  grid-template-rows: 1fr auto;
 }

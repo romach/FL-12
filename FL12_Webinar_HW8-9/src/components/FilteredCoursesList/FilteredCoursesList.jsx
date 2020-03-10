@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import CoursesList from "./CoursesList";
 import { Link } from "react-router-dom";
+import Input from "../Input";
+import Button from "../Button";
 
 export default class FilteredCoursesList extends Component {
   constructor(props) {
@@ -14,17 +16,27 @@ export default class FilteredCoursesList extends Component {
     this.props.courses.filter(course =>
       course.name.toLowerCase().includes(this.state.search.toLowerCase())
     );
+
+  changeSearchString = searchString => this.setState({ search: searchString });
+
   render() {
     return (
       <div>
-        <div>
-          <input
-            type="text"
+        <div
+          style={{
+            marginBottom: 24,
+            display: "grid",
+            gridTemplateColumns: "auto min-content",
+            columnGap: "1.5rem"
+          }}
+        >
+          <Input
+            placeholder="Search"
             value={this.state.search}
-            onChange={event => this.setState({ search: event.target.value })}
+            onChange={this.changeSearchString}
           />
           <Link to="/create">
-            <button type="button">Add course</button>
+            <Button>Add course</Button>
           </Link>
         </div>
         <CoursesList
