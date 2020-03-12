@@ -36,7 +36,7 @@ export default class FilteredCoursesList extends Component {
             onChange={this.changeSearchString}
           />
           <Link to="/create">
-            <Button>Add course</Button>
+            <Button type="primary">Add course</Button>
           </Link>
         </div>
         <CoursesList

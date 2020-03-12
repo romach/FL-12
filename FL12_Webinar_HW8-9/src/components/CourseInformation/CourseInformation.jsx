@@ -3,6 +3,7 @@ import { Route, Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import PropTypes from "prop-types";
 import PropertyInput from "./PropertyInput";
+import Button from "../Button";
 
 class CourseInformation extends Component {
   constructor(props) {
@@ -37,27 +38,52 @@ class CourseInformation extends Component {
 
   render() {
     return (
-      <div>
-        {this.fetchEditableCourseProperties().map(property => (
-          <PropertyInput
-            key={property}
-            title={
-              property === "name"
-                ? "Title"
-                : this.uppercasePropertyName(property)
-            }
-            propertyName={property}
-            propertyValue={this.state.course[property]}
-            changeInputValue={this.changeProperty}
-            isValidProperty={this.isValidProperty}
-            afterFailedSave={this.state.afterFailedSave}
-          />
-        ))}
-        <div>
-          <Route
-            render={({ history }) => (
-              <button
-                type="button"
+      <div className="course-information">
+        <div className="container">
+          <h1 style={{ lineHeight: "140px", textAlign: "center" }}>
+            {this.props.title}
+          </h1>
+          <div className="properties">
+            {this.fetchEditableCourseProperties().map(property => (
+              <PropertyInput
+                key={property}
+                title={
+                  property === "name"
+                    ? "Title"
+                    : this.uppercasePropertyName(property)
+                }
+                propertyName={property}
+                propertyValue={this.state.course[property]}
+                changeInputValue={this.changeProperty}
+                isValidProperty={this.isValidProperty}
+                afterFailedSave={this.state.afterFailedSave}
+              />
+            ))}
+            <Route
+              render={({ history }) => (
+                <Button
+                  type="primary"
+                  onClick={() => {
+                    if (this.informationIsValid()) {
+                      this.props.saveAction(this.state.course);
+                      history.push("/");
+                    } else {
+                      this.setState({ afterFailedSave: true });
+                    }
+                  }}
+                >
+                  Save
+                </Button>
+              )}
+            />
+            <Link to="/">
+              <Button type="secondary">Cancel</Button>
+            </Link>
+          </div>
+          <div className="buttons">
+            {/* <Route
+              render={({ history }) => (
+                <Button type ="primary"
                 onClick={() => {
                   if (this.informationIsValid()) {
                     this.props.saveAction(this.state.course);
@@ -68,12 +94,13 @@ class CourseInformation extends Component {
                 }}
               >
                 Save
-              </button>
-            )}
-          />
-          <Link to="/">
-            <button type="button">Cancel</button>
-          </Link>
+              </Button>
+              )}
+            />
+            <Link to="/">
+              <Button type ="secondary">Cancel</Button>
+            </Link> */}
+          </div>
         </div>
       </div>
     );
@@ -89,6 +116,7 @@ CourseInformation.propTypes = {
     authors: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired
   }),
+  title: PropTypes.string.isRequired,
   saveAction: PropTypes.instanceOf(Function).isRequired,
   cloneCourseById: PropTypes.instanceOf(Function)
 };

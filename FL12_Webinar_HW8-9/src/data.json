@@ -22,6 +22,102 @@
     "duration": "1h",
     "authors": "Oksana Hodysh",
     "date": "2020-02-18"
+  },
+  {
+    "id": 4,
+    "name": "ES Next",
+    "description": "",
+    "duration": "1h",
+    "authors": "Yuriy Pankiv",
+    "date": "2020-02-20"
+  },
+  {
+    "id": 5,
+    "name": "AJAX",
+    "description": "",
+    "duration": "2h",
+    "authors": "Andrii Dubchak",
+    "date": "2020-02-25"
+  },
+  {
+    "id": 6,
+    "name": "jQuery",
+    "description": "",
+    "duration": "2h",
+    "authors": "Anatolii Dmytruk",
+    "date": "2020-02-27"
+  },
+  {
+    "id": 7,
+    "name": "Tools",
+    "description": "",
+    "duration": "1h",
+    "authors": "Andrii Shupta",
+    "date": "2020-03-03"
+  },
+  {
+    "id": 8,
+    "name": "React.js",
+    "description": "",
+    "duration": "1h",
+    "authors": "Tetiana Kandybal",
+    "date": "2020-03-05"
+  },
+  {
+    "id": 9,
+    "name": "React.js + Redux",
+    "description": "",
+    "duration": "1h",
+    "authors": "Tetiana Kandybal",
+    "date": "2020-03-10"
+  },
+  {
+    "id": 10,
+    "name": "Angular Part 1",
+    "description": "",
+    "duration": "2h",
+    "authors": "Stepan Sendun",
+    "date": "2020-03-12"
+  },
+  {
+    "id": 11,
+    "name": "Angular Part 2",
+    "description": "",
+    "duration": "1h",
+    "authors": "Stepan Sendun",
+    "date": "2020-03-17"
+  },
+  {
+    "id": 12,
+    "name": "JS Patterns",
+    "description": "",
+    "duration": "1h",
+    "authors": "Andrew Romanchak",
+    "date": "2020-03-19"
+  },
+  {
+    "id": 13,
+    "name": "JS Modules",
+    "description": "",
+    "duration": "2h",
+    "authors": "Artem Burlaka",
+    "date": "2020-03-24"
+  },
+  {
+    "id": 14,
+    "name": "NodeJS / ExpressJS",
+    "description": "",
+    "duration": "2h",
+    "authors": "Vadym Zhufiak",
+    "date": " 2020-03-26"
+  },
+  {
+    "id": 15,
+    "name": "Testing web application",
+    "description": "",
+    "duration": "1h",
+    "authors": "Andrii Klymovskyi",
+    "date": " 2020-03-31"
   }
  
 ]

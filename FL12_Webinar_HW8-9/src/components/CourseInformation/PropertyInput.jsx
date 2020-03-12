@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import Input from "../Input";
 
 export default class PropertyInput extends Component {
   constructor(props) {
@@ -19,20 +20,66 @@ export default class PropertyInput extends Component {
 
   render() {
     const { title, propertyName, propertyValue } = this.props;
-    return (
-      <div>
-        <div style={this.highlightAsInvalid() ? { color: "red" } : null}>
-          {title} *
-        </div>
-        <input
-          value={propertyValue}
-          onChange={event => {
-            this.props.changeInputValue(propertyName, event.target.value);
-            this.setState({ wasChanged: true });
-          }}
-        />
-      </div>
+    const labelStyle = { display: "inline-block", marginBottom: "0.5rem" };
+    const label = (
+      <label
+        htmlFor={propertyName}
+        style={
+          this.highlightAsInvalid()
+            ? { ...labelStyle, color: "red" }
+            : labelStyle
+        }
+      >
+        {title} *
+      </label>
     );
+    let input;
+    if (propertyName === "description") {
+      input = (
+        <div className={`property-input ${propertyName}`}>
+          {label}
+          <Input
+            id={propertyName}
+            value={propertyValue}
+            type="textarea"
+            onChange={value => {
+              this.props.changeInputValue(propertyName, value);
+              this.setState({ wasChanged: true });
+            }}
+          />
+        </div>
+      );
+    } else if (propertyName === "date") {
+      input = (
+        <div className={`property-input ${propertyName}`}>
+          {label}
+          <Input
+            id={propertyName}
+            value={propertyValue}
+            onChange={value => {
+              this.props.changeInputValue(propertyName, value);
+              this.setState({ wasChanged: true });
+            }}
+          />
+        </div>
+      );
+    } else {
+      input = (
+        <div className={`property-input ${propertyName}`}>
+          {label}
+          <Input
+            id={propertyName}
+            value={propertyValue}
+            onChange={value => {
+              this.props.changeInputValue(propertyName, value);
+              this.setState({ wasChanged: true });
+            }}
+          />
+        </div>
+      );
+    }
+
+    return input;
   }
 }
 

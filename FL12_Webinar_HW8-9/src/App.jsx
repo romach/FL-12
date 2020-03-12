@@ -93,7 +93,7 @@ class App extends Component {
                 </div>
               </Container>
             </header>
-            <main style={{ paddingBottom: 48, paddingTop:90 }}>
+            <main style={{ paddingBottom: 48, paddingTop: 90 }}>
               <Container>
                 <Switch>
                   <Route path="/" exact>
@@ -104,12 +104,14 @@ class App extends Component {
                   </Route>
                   <Route path="/create">
                     <CourseInformation
+                      title="New course"
                       course={this.createNewCourse()}
                       saveAction={this.addCourse}
                     />
                   </Route>
                   <Route path="/edit/:id">
                     <CourseInformation
+                      title="Edit course"
                       saveAction={this.updateCourse}
                       cloneCourseById={this.cloneCourseById}
                     />
@@ -121,7 +123,9 @@ class App extends Component {
         </div>
 
         <footer style={{ height: 50, backgroundColor: "white" }}>
-          <Container>&copy; Videocourses, All Rights Reserved.</Container>
+          <Container>
+            <div style={{lineHeight: "50px"}}>&copy; Videocourses, All Rights Reserved.</div>
+          </Container>
         </footer>
       </>
     );

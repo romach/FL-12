@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Inter:200,400,600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Inter:200,400,600&display=swap");
 * {
   margin: 0;
   box-sizing: border-box;
@@ -20,4 +20,102 @@ body {
 #root {
   display: grid;
   grid-template-rows: 1fr auto;
+}
+.popup-link {
+  color: #3d3d3d;
+  text-decoration: none;
+  display: block;
+  line-height: 1.5rem;
+}
+.popup-link:hover {
+  color: #18acdb;
+}
+.icon {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-repeat: no-repeat;
+  background-size: 0.75rem 0.75rem;
+  filter: opacity(50%);
+  margin-right: 1rem;
+}
+.icon-edit {
+  background-image: url("/edit.svg");
+}
+.icon-delete {
+  background-image: url("/delete.svg");
+}
+.popup-corner {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 10%;
+  bottom: 100%;
+  overflow: hidden;
+}
+.popup-corner::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 15px;
+  height: 30px;
+  border-radius: 5px 0 0 0;
+  box-shadow: 0 0 7px #ccc;
+  bottom: 0;
+  left: 5px;
+  transform-origin: bottom left;
+  transform: rotate(66deg) skew(0deg, -15deg);
+}
+.course-information {
+  color: black;
+  background: white;
+  border-radius: 7px;
+}
+.course-information .container {
+  max-width: 496px;
+  margin: 0 auto;
+}
+.course-information .properties {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 2rem;
+}
+.course-information button {
+  margin-top: 70px;
+  margin-bottom: 65px;
+}
+.property-input {
+  margin-bottom: 1rem;
+}
+.property-input.name,
+.property-input.description {
+  grid-column: 1 / span 2;
+}
+.property-input.description {
+  margin-bottom: 40px;
+}
+.property-input.date {
+  grid-row: 3 / span 2;
+  grid-column: 2 / span 1;
+  width: 200px;
+}
+
+.button {
+  height: 48px;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.button.primary {
+  width: 224px;
+  border-radius: 7px;
+  color: white;
+  background: linear-gradient(#52e8db, #18acdb);
+  box-shadow: 0 0 7px 3px #a0e8e0;
+}
+.button.secondary {
+  color: #b6b6b6;
+  background-color: transparent;
 }

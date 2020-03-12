@@ -21,7 +21,7 @@ export default class CourseItem extends Component {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "15% 20% auto 5% max-content",
+          gridTemplateColumns: "10% 20% auto 10% max-content",
           height: 80,
           backgroundColor: "white",
           borderRadius: 7,
@@ -53,33 +53,49 @@ export default class CourseItem extends Component {
         </div>
         <div>{duration}</div>
         <div>
-          <button type="button" onClick={this.toggleMenu}>
-            Menu
+          <button
+            type="button"
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              fontSize: 24,
+              color: "#afafaf",
+              letterSpacing: "0.25rem"
+            }}
+            onClick={this.toggleMenu}
+          >
+            <span style={{verticalAlign: "super"}}>...</span>
           </button>
           {this.state.menuIsOpened ? (
             <div style={{ position: "relative" }}>
               <div
                 style={{
-                  padding: "0.5rem",
+                  width: 182,
+                  padding: "1rem",
                   right: 0,
-                  border: "1px solid #ccc",
+                  borderRadius: 4,
+                  boxShadow: "0 0 7px #ccc",
                   position: "absolute",
                   backgroundColor: "white"
                 }}
               >
-                <Link to={`/edit/${course.id}`}>
-                  <button type="button">Edit</button>
+                <div className="popup-corner"></div>
+                <Link className="popup-link" to={`/edit/${course.id}`}>
+                  <span className="icon icon-edit"></span>Edit
                 </Link>
-                <div>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      this.props.deleteCourse(this.props.course.id)
-                    }
-                  >
-                    Delete
-                  </button>
-                </div>
+                {/* eslint-disable-next-line */}
+                <a
+                  className="popup-link"
+                  href="#"
+                  type="button"
+                  onClick={event => {
+                    event.preventDefault();
+                    this.props.deleteCourse(this.props.course.id);
+                  }}
+                >
+                  <span className="icon icon-delete"></span>Delete
+                </a>
               </div>
             </div>
           ) : null}
