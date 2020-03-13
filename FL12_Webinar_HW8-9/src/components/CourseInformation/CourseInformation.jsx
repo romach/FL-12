@@ -80,27 +80,6 @@ class CourseInformation extends Component {
               <Button type="secondary">Cancel</Button>
             </Link>
           </div>
-          <div className="buttons">
-            {/* <Route
-              render={({ history }) => (
-                <Button type ="primary"
-                onClick={() => {
-                  if (this.informationIsValid()) {
-                    this.props.saveAction(this.state.course);
-                    history.push("/");
-                  } else {
-                    this.setState({ afterFailedSave: true });
-                  }
-                }}
-              >
-                Save
-              </Button>
-              )}
-            />
-            <Link to="/">
-              <Button type ="secondary">Cancel</Button>
-            </Link> */}
-          </div>
         </div>
       </div>
     );

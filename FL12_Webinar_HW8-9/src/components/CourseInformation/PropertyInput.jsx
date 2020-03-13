@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Input from "../Input";
+import Calendar from "./Calendar";
 
 export default class PropertyInput extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ export default class PropertyInput extends Component {
             : labelStyle
         }
       >
-        {title} *
+        {title}*
       </label>
     );
     let input;
@@ -51,10 +52,8 @@ export default class PropertyInput extends Component {
       );
     } else if (propertyName === "date") {
       input = (
-        <div className={`property-input ${propertyName}`}>
-          {label}
-          <Input
-            id={propertyName}
+        <div className={`property-input date`}>
+          <Calendar
             value={propertyValue}
             onChange={value => {
               this.props.changeInputValue(propertyName, value);

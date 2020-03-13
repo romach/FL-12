@@ -4,6 +4,7 @@ import FilteredCoursesList from "./components/FilteredCoursesList/FilteredCourse
 import CourseInformation from "./components/CourseInformation/CourseInformation";
 import Container from "./components/Container";
 import initialCourses from "./data.json";
+import { templates, dateToString } from "./utils/DateUtils";
 
 class App extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class App extends Component {
       description: "",
       duration: "",
       authors: "",
-      date: ""
+      date: dateToString(new Date())(templates.MODEL),
     };
   };
 

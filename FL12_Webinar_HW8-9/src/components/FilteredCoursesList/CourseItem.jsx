@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
+import { dateToString, templates } from "../../utils/DateUtils";
 
 export default class CourseItem extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ export default class CourseItem extends Component {
           alignItems: "center"
         }}
       >
-        <div>{date}</div>
+        <div>{dateToString(new Date(date))(templates.COURSES_LIST)}</div>
         <div
           style={{
             fontWeight: 600,
@@ -65,7 +66,7 @@ export default class CourseItem extends Component {
             }}
             onClick={this.toggleMenu}
           >
-            <span style={{verticalAlign: "super"}}>...</span>
+            <span style={{ verticalAlign: "super" }}>...</span>
           </button>
           {this.state.menuIsOpened ? (
             <div style={{ position: "relative" }}>
