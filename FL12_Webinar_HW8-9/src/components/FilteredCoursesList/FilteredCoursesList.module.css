@@ -4,3 +4,10 @@
   grid-template-columns: auto min-content;
   column-gap: 1.5rem;
 }
+.search {
+  padding-left: 4rem;
+  background-image: url("/search.svg");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 20px center;
+}

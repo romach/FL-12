@@ -20,77 +20,22 @@ export default class CourseItem extends Component {
     const course = this.props.course;
     const { name, description, duration, date } = course;
     return (
-      <div
-      className={styles.item}
-        // style={{
-        //   display: "grid",
-        //   gridTemplateColumns: "10% 20% auto 10% max-content",
-        //   height: 80,
-        //   backgroundColor: "white",
-        //   borderRadius: 7,
-        //   gridColumnGap: "2rem",
-        //   padding: "0 2rem",
-        //   alignContent: "center",
-        //   alignItems: "center"
-        // }}
-      >
+      <div className={styles.item}>
         <div>{dateToString(new Date(date))(templates.COURSES_LIST)}</div>
-        <div className={styles.name}
-          // style={{
-          //   fontWeight: 600,
-          //   maxHeight: "2.4em",
-          //   lineHeight: "1.2em",
-          //   overflow: "hidden"
-          // }}
-        >
-          {name}
-        </div>
-        <div className={styles.description}
-          // style={{
-          //   maxHeight: "2.4em",
-          //   lineHeight: "1.2em",
-          //   overflow: "hidden"
-          // }}
-        >
-          {description}
-        </div>
+        <div className={styles.name}>{name}</div>
+        <div className={styles.description}>{description}</div>
         <div>{duration}</div>
         <div>
           <button
             type="button"
             className={styles.menuButton}
-            // style={{
-            //   background: "none",
-            //   border: "none",
-            //   cursor: "pointer",
-            //   fontSize: 24,
-            //   color: "#afafaf",
-            //   letterSpacing: "0.25rem"
-            // }}
             onClick={this.toggleMenu}
           >
-            <span
-              // style={{ verticalAlign: "super" }}
-              className={styles.menuButtonContent}
-            >...</span>
+            <span className={styles.menuButtonContent}>...</span>
           </button>
           {this.state.menuIsOpened ? (
-            <div 
-              className={styles.menuWrapper}
-              // style={{ position: "relative" }}
-            >
-              <div
-                className={styles.menu}
-                // style={{
-                //   width: 182,
-                //   padding: "1rem",
-                //   right: 0,
-                //   borderRadius: 4,
-                //   boxShadow: "0 0 7px #ccc",
-                //   position: "absolute",
-                //   backgroundColor: "white"
-                // }}
-              >
+            <div className={styles.menuWrapper}>
+              <div className={styles.menu}>
                 <div className={styles.menuCorner}></div>
                 <Link className={styles.menuLink} to={`/edit/${course.id}`}>
                   <span className={styles.iconEdit}></span>Edit

@@ -19,7 +19,7 @@ export default class Input extends Component {
     } else {
       input = (
         <input
-          className={styles.input}
+          className={`${styles.input} ${this.props.className}`}
           id={this.props.id}
           placeholder={this.props.placeholder}
           value={this.props.value}
@@ -36,7 +36,8 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   value: PropTypes.any.isRequired,
   onChange: PropTypes.func.isRequired,
-  type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
+  className: PropTypes.string
 };
 
 Input.defaultProps = {

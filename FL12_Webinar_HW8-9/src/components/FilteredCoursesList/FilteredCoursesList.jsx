@@ -25,6 +25,7 @@ export default class FilteredCoursesList extends Component {
       <div>
         <div className={styles.header}>
           <Input
+            className={styles.search}
             placeholder="Search"
             value={this.state.search}
             onChange={this.changeSearchString}
