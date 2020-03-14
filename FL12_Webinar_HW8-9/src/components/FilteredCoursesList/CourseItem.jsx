@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 import { dateToString, templates } from "../../utils/DateUtils";
+import styles from "./CourseItem.module.css";
 
 export default class CourseItem extends Component {
   constructor(props) {
@@ -20,35 +21,36 @@ export default class CourseItem extends Component {
     const { name, description, duration, date } = course;
     return (
       <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "10% 20% auto 10% max-content",
-          height: 80,
-          backgroundColor: "white",
-          borderRadius: 7,
-          gridColumnGap: "2rem",
-          padding: "0 2rem",
-          alignContent: "center",
-          alignItems: "center"
-        }}
+      className={styles.item}
+        // style={{
+        //   display: "grid",
+        //   gridTemplateColumns: "10% 20% auto 10% max-content",
+        //   height: 80,
+        //   backgroundColor: "white",
+        //   borderRadius: 7,
+        //   gridColumnGap: "2rem",
+        //   padding: "0 2rem",
+        //   alignContent: "center",
+        //   alignItems: "center"
+        // }}
       >
         <div>{dateToString(new Date(date))(templates.COURSES_LIST)}</div>
-        <div
-          style={{
-            fontWeight: 600,
-            maxHeight: "2.4em",
-            lineHeight: "1.2em",
-            overflow: "hidden"
-          }}
+        <div className={styles.name}
+          // style={{
+          //   fontWeight: 600,
+          //   maxHeight: "2.4em",
+          //   lineHeight: "1.2em",
+          //   overflow: "hidden"
+          // }}
         >
           {name}
         </div>
-        <div
-          style={{
-            maxHeight: "2.4em",
-            lineHeight: "1.2em",
-            overflow: "hidden"
-          }}
+        <div className={styles.description}
+          // style={{
+          //   maxHeight: "2.4em",
+          //   lineHeight: "1.2em",
+          //   overflow: "hidden"
+          // }}
         >
           {description}
         </div>
@@ -56,38 +58,46 @@ export default class CourseItem extends Component {
         <div>
           <button
             type="button"
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              fontSize: 24,
-              color: "#afafaf",
-              letterSpacing: "0.25rem"
-            }}
+            className={styles.menuButton}
+            // style={{
+            //   background: "none",
+            //   border: "none",
+            //   cursor: "pointer",
+            //   fontSize: 24,
+            //   color: "#afafaf",
+            //   letterSpacing: "0.25rem"
+            // }}
             onClick={this.toggleMenu}
           >
-            <span style={{ verticalAlign: "super" }}>...</span>
+            <span
+              // style={{ verticalAlign: "super" }}
+              className={styles.menuButtonContent}
+            >...</span>
           </button>
           {this.state.menuIsOpened ? (
-            <div style={{ position: "relative" }}>
+            <div 
+              className={styles.menuWrapper}
+              // style={{ position: "relative" }}
+            >
               <div
-                style={{
-                  width: 182,
-                  padding: "1rem",
-                  right: 0,
-                  borderRadius: 4,
-                  boxShadow: "0 0 7px #ccc",
-                  position: "absolute",
-                  backgroundColor: "white"
-                }}
+                className={styles.menu}
+                // style={{
+                //   width: 182,
+                //   padding: "1rem",
+                //   right: 0,
+                //   borderRadius: 4,
+                //   boxShadow: "0 0 7px #ccc",
+                //   position: "absolute",
+                //   backgroundColor: "white"
+                // }}
               >
-                <div className="popup-corner"></div>
-                <Link className="popup-link" to={`/edit/${course.id}`}>
-                  <span className="icon icon-edit"></span>Edit
+                <div className={styles.menuCorner}></div>
+                <Link className={styles.menuLink} to={`/edit/${course.id}`}>
+                  <span className={styles.iconEdit}></span>Edit
                 </Link>
                 {/* eslint-disable-next-line */}
                 <a
-                  className="popup-link"
+                  className={styles.menuLink}
                   href="#"
                   type="button"
                   onClick={event => {
@@ -95,7 +105,7 @@ export default class CourseItem extends Component {
                     this.props.deleteCourse(this.props.course.id);
                   }}
                 >
-                  <span className="icon icon-delete"></span>Delete
+                  <span className={styles.iconDelete}></span>Delete
                 </a>
               </div>
             </div>

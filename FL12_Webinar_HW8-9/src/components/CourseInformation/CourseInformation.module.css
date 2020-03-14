@@ -1,0 +1,25 @@
+.courseInformation {
+  color: black;
+  background: white;
+  border-radius: 7px;
+  max-width: 890px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.container {
+  max-width: 496px;
+  margin: 0 auto;
+}
+.title {
+  line-height: 140px;
+  text-align: center;
+}
+.properties {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 2rem;
+}
+.marginWrapper {
+  margin-top: 70px;
+  margin-bottom: 65px;
+}

@@ -1,0 +1,21 @@
+.header {
+  height: 72px;
+  background-color: white;
+}
+.content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #3d3d3d;
+  text-decoration: none;
+}
+.text {
+  margin-left: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}

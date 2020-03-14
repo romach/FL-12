@@ -3,6 +3,7 @@ import CoursesList from "./CoursesList";
 import { Link } from "react-router-dom";
 import Input from "../Input";
 import Button from "../Button";
+import styles from "./FilteredCoursesList.module.css";
 
 export default class FilteredCoursesList extends Component {
   constructor(props) {
@@ -22,14 +23,7 @@ export default class FilteredCoursesList extends Component {
   render() {
     return (
       <div>
-        <div
-          style={{
-            marginBottom: 24,
-            display: "grid",
-            gridTemplateColumns: "auto min-content",
-            columnGap: "1.5rem"
-          }}
-        >
+        <div className={styles.header}>
           <Input
             placeholder="Search"
             value={this.state.search}

@@ -1,0 +1,15 @@
+.input {
+  border-radius: 7px;
+  border: 1px solid #d2d2d2;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  padding: 1rem;
+  display: block;
+  width: 100%;
+  height: 48px;
+}
+.textarea {
+  composes: input;
+  height: inherit;
+}

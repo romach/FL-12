@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Input from "../Input";
 import Calendar from "./Calendar";
+import styles from "./PropertyInput.module.css";
+import classes from "./PropertyInput.module.css";
 
 export default class PropertyInput extends Component {
   constructor(props) {
@@ -21,15 +23,10 @@ export default class PropertyInput extends Component {
 
   render() {
     const { title, propertyName, propertyValue } = this.props;
-    const labelStyle = { display: "inline-block", marginBottom: "0.5rem" };
     const label = (
       <label
         htmlFor={propertyName}
-        style={
-          this.highlightAsInvalid()
-            ? { ...labelStyle, color: "red" }
-            : labelStyle
-        }
+        className={this.highlightAsInvalid() ? styles.invalidLabel : styles.label}
       >
         {title}*
       </label>
@@ -37,7 +34,7 @@ export default class PropertyInput extends Component {
     let input;
     if (propertyName === "description") {
       input = (
-        <div className={`property-input ${propertyName}`}>
+        <div className={styles[propertyName]}>
           {label}
           <Input
             id={propertyName}
@@ -52,7 +49,7 @@ export default class PropertyInput extends Component {
       );
     } else if (propertyName === "date") {
       input = (
-        <div className={`property-input date`}>
+        <div className={classes.date}>
           <Calendar
             value={propertyValue}
             onChange={value => {
@@ -64,7 +61,7 @@ export default class PropertyInput extends Component {
       );
     } else {
       input = (
-        <div className={`property-input ${propertyName}`}>
+        <div className={styles[propertyName]}>
           {label}
           <Input
             id={propertyName}
@@ -77,7 +74,6 @@ export default class PropertyInput extends Component {
         </div>
       );
     }
-
     return input;
   }
 }

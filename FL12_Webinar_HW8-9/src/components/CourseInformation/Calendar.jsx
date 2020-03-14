@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { templates, dateToString, cloneDate } from "../../utils/DateUtils";
+import styles from "./Calendar.module.css";
+import classNames from "classnames/bind";
 
 class Calendar extends Component {
   constructor(props) {
@@ -39,11 +41,21 @@ class Calendar extends Component {
     ];
     return (
       <>
-        <div className="previous-month" onClick={() => this.changeSwappingMonth(-1)}>&lt;</div>
+        <div
+          className={styles.previousMonth}
+          onClick={() => this.changeSwappingMonth(-1)}
+        >
+          &lt;
+        </div>
         <div>
           {monthes[monthNumber]} {date.getFullYear()}
         </div>
-        <div className="next-month" onClick={() => this.changeSwappingMonth(+1)}>&gt;</div>
+        <div
+          className={styles.nextMonth}
+          onClick={() => this.changeSwappingMonth(+1)}
+        >
+          &gt;
+        </div>
       </>
     );
   };
@@ -51,7 +63,7 @@ class Calendar extends Component {
   renderDayNames = () => {
     const names = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
     return names.map(name => (
-      <div key={name} className="day-name">
+      <div key={name} className={styles.dayName}>
         {name}
       </div>
     ));
@@ -68,12 +80,16 @@ class Calendar extends Component {
     for (let i = 0; i < WEEKS_COUNT * DAYS_IN_WEEK; i++) {
       const month = dateOfDay.getMonth();
       const dayOfMonth = dateOfDay.getDate();
-      const isCurrentDay = courseDate.valueOf() === dateOfDay.valueOf();
+      const isCourseDay =
+        dateToString(courseDate)(templates.MODEL) ===
+        dateToString(dateOfDay)(templates.MODEL);
       const isCurrentMonth = swappingDate.getMonth() === dateOfDay.getMonth();
-      const className =
-        "day" +
-        (isCurrentDay ? " current" : "") +
-        (isCurrentMonth ? "" : " other-month");
+      const boundClassNames = classNames.bind(styles);
+      const dayClassName = boundClassNames({
+        day: true,
+        courseDay: isCourseDay,
+        otherMonthDay: !isCurrentMonth
+      });
       const key = `${month}-${dayOfMonth}`;
       const _date = cloneDate(dateOfDay);
       days.push(
@@ -82,13 +98,13 @@ class Calendar extends Component {
             onClick={() => {
               this.props.onChange(dateToString(_date)(templates.MODEL));
             }}
-            className={className}
+            className={dayClassName}
             key={key}
           >
             {dayOfMonth}
           </div>
         ) : (
-          <div className={className} key={key}>
+          <div className={dayClassName} key={key}>
             {dayOfMonth}
           </div>
         )
@@ -100,18 +116,18 @@ class Calendar extends Component {
 
   render() {
     const courseDate = new Date(this.props.value);
-    const swappingDate = new Date(this.state.swappingDate)
+    const swappingDate = new Date(this.state.swappingDate);
     return (
-      <section className="calendar">
-        <header className="header">
+      <section>
+        <div className={styles.label}>
           <div>Date*</div>
-          <div className="value">
+          <div className={styles.selectedDate}>
             {dateToString(courseDate)(templates.CALENDAR)}
           </div>
-        </header>
-        <div className="main">
-          <div className="month">{this.renderMonth(swappingDate)}</div>
-          <div className="days">
+        </div>
+        <div className={styles.main}>
+          <div className={styles.month}>{this.renderMonth(swappingDate)}</div>
+          <div className={styles.days}>
             {this.renderDayNames()}
             {this.renderDays(courseDate, swappingDate)}
           </div>

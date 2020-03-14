@@ -1,0 +1,9 @@
+.wrapper {
+  margin: 0 auto;
+  max-width: calc(1092px + 100px*2);
+  height: 100%;
+}
+.content {
+  padding: 0 100px;
+  height: 100%;
+}

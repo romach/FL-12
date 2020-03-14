@@ -1,0 +1,21 @@
+.button {
+  height: 48px;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.primary {
+  composes: button;
+  width: 224px;
+  border-radius: 7px;
+  color: white;
+  background: linear-gradient(#52e8db, #18acdb);
+  box-shadow: 0 0 7px 3px #a0e8e0; 
+}
+.secondary {
+  composes: button;
+  color: #b6b6b6;
+  background-color: transparent;
+}

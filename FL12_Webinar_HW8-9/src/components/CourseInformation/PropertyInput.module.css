@@ -1,0 +1,24 @@
+.label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.invalidLabel {
+  composes: label;
+  color: red;
+}
+.propertyInput {
+  margin-bottom: 1rem;
+}
+.name, .description {
+  composes: propertyInput;
+  grid-column: 1 / span 2;
+}
+.description {
+  margin-bottom: 40px;
+}
+.date {
+  width: 200px;
+}
+.duration {
+  margin-bottom: 1rem;
+}

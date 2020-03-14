@@ -4,6 +4,7 @@ import { withRouter } from "react-router";
 import PropTypes from "prop-types";
 import PropertyInput from "./PropertyInput";
 import Button from "../Button";
+import styles from "./CourseInformation.module.css";
 
 class CourseInformation extends Component {
   constructor(props) {
@@ -37,47 +38,53 @@ class CourseInformation extends Component {
   };
 
   render() {
+    const propertyInputs = this.fetchEditableCourseProperties().map(
+      property => (
+        <PropertyInput
+          key={property}
+          title={
+            property === "name" ? "Title" : this.uppercasePropertyName(property)
+          }
+          propertyName={property}
+          propertyValue={this.state.course[property]}
+          changeInputValue={this.changeProperty}
+          isValidProperty={this.isValidProperty}
+          afterFailedSave={this.state.afterFailedSave}
+        />
+      )
+    );
+    const smallInputs = propertyInputs.slice(2, 4);
+    propertyInputs.splice(2, 2, <div key="small-inputs">{smallInputs}</div>);
+
     return (
-      <div className="course-information">
-        <div className="container">
-          <h1 style={{ lineHeight: "140px", textAlign: "center" }}>
-            {this.props.title}
-          </h1>
-          <div className="properties">
-            {this.fetchEditableCourseProperties().map(property => (
-              <PropertyInput
-                key={property}
-                title={
-                  property === "name"
-                    ? "Title"
-                    : this.uppercasePropertyName(property)
-                }
-                propertyName={property}
-                propertyValue={this.state.course[property]}
-                changeInputValue={this.changeProperty}
-                isValidProperty={this.isValidProperty}
-                afterFailedSave={this.state.afterFailedSave}
-              />
-            ))}
+      <div className={styles.courseInformation}>
+        <div className={styles.container}>
+          <h1 className={styles.title}>{this.props.title}</h1>
+          <div className={styles.properties}>
+            {propertyInputs}
             <Route
               render={({ history }) => (
-                <Button
-                  type="primary"
-                  onClick={() => {
-                    if (this.informationIsValid()) {
-                      this.props.saveAction(this.state.course);
-                      history.push("/");
-                    } else {
-                      this.setState({ afterFailedSave: true });
-                    }
-                  }}
-                >
-                  Save
-                </Button>
+                <div className={styles.marginWrapper}>
+                  <Button
+                    type="primary"
+                    onClick={() => {
+                      if (this.informationIsValid()) {
+                        this.props.saveAction(this.state.course);
+                        history.push("/");
+                      } else {
+                        this.setState({ afterFailedSave: true });
+                      }
+                    }}
+                  >
+                    Save
+                  </Button>
+                </div>
               )}
             />
             <Link to="/">
-              <Button type="secondary">Cancel</Button>
+              <div className={styles.marginWrapper}>
+                <Button type="secondary">Cancel</Button>
+              </div>
             </Link>
           </div>
         </div>

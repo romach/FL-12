@@ -1,10 +1,13 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import FilteredCoursesList from "./components/FilteredCoursesList/FilteredCoursesList";
 import CourseInformation from "./components/CourseInformation/CourseInformation";
 import Container from "./components/Container";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import initialCourses from "./data.json";
 import { templates, dateToString } from "./utils/DateUtils";
+import styles from "./App.module.css"
 
 class App extends Component {
   constructor(props) {
@@ -61,40 +64,8 @@ class App extends Component {
       <>
         <div>
           <Router>
-            <header style={{ height: 72, backgroundColor: "white" }}>
-              <Container>
-                <div
-                  style={{
-                    height: "100%",
-                    display: "flex",
-                    alignItems: "center"
-                  }}
-                >
-                  <Link
-                    to="/"
-                    style={{
-                      height: "100%",
-                      display: "flex",
-                      alignItems: "center",
-                      color: "#3d3d3d",
-                      textDecoration: "none"
-                    }}
-                  >
-                    <img src="/logo.png" alt="Logo" />
-                    <span
-                      style={{
-                        marginLeft: 10,
-                        fontWeight: 600,
-                        textTransform: "uppercase"
-                      }}
-                    >
-                      Learn
-                    </span>
-                  </Link>
-                </div>
-              </Container>
-            </header>
-            <main style={{ paddingBottom: 48, paddingTop: 90 }}>
+            <Header />
+            <main className={styles.mainContent}>
               <Container>
                 <Switch>
                   <Route path="/" exact>
@@ -122,12 +93,7 @@ class App extends Component {
             </main>
           </Router>
         </div>
-
-        <footer style={{ height: 50, backgroundColor: "white" }}>
-          <Container>
-            <div style={{lineHeight: "50px"}}>&copy; Videocourses, All Rights Reserved.</div>
-          </Container>
-        </footer>
+        <Footer/>
       </>
     );
   }

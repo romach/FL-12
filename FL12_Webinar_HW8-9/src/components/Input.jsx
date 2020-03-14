@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import styles from "./Input.module.css";
 
 export default class Input extends Component {
   render() {
@@ -8,16 +9,7 @@ export default class Input extends Component {
       input = (
         <textarea
           rows="5"
-          style={{
-            borderRadius: 7,
-            border: "1px solid #d2d2d2",
-            fontSize: "inherit",
-            fontFamily: "inherit",
-            fontWeight: "inherit",
-            padding: "1rem",
-            display: "block",
-            width: "100%"
-          }}
+          className={styles.textarea}
           id={this.props.id}
           placeholder={this.props.placeholder}
           value={this.props.value}
@@ -27,17 +19,7 @@ export default class Input extends Component {
     } else {
       input = (
         <input
-          style={{
-            height: 48,
-            borderRadius: 7,
-            border: "1px solid #d2d2d2",
-            fontSize: "inherit",
-            fontFamily: "inherit",
-            fontWeight: "inherit",
-            padding: "1rem",
-            display: "block",
-            width: "100%"
-          }}
+          className={styles.input}
           id={this.props.id}
           placeholder={this.props.placeholder}
           value={this.props.value}
