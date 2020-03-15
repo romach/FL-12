@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 import { dateToString, templates } from "../../utils/DateUtils";
 import styles from "./CourseItem.module.css";
+import { connect } from "react-redux";
+import { remove } from "../../actions";
 
-export default class CourseItem extends Component {
+class CourseItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,7 +49,7 @@ export default class CourseItem extends Component {
                   type="button"
                   onClick={event => {
                     event.preventDefault();
-                    this.props.deleteCourse(this.props.course.id);
+                    this.props.remove(this.props.course.id);
                   }}
                 >
                   <span className={styles.iconDelete}></span>Delete
@@ -70,5 +72,7 @@ CourseItem.propTypes = {
     authors: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired
   }),
-  deleteCourse: PropTypes.instanceOf(Function).isRequired
+  remove: PropTypes.instanceOf(Function).isRequired
 };
+
+export default connect(null, {remove})(CourseItem);

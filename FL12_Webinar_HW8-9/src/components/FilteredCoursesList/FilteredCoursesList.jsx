@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import Input from "../Input";
 import Button from "../Button";
 import styles from "./FilteredCoursesList.module.css";
+import { connect } from "react-redux";
 
-export default class FilteredCoursesList extends Component {
+class FilteredCoursesList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,9 +37,15 @@ export default class FilteredCoursesList extends Component {
         </div>
         <CoursesList
           courses={this.filterCourses()}
-          deleteCourse={this.props.deleteCourse}
         />
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  const courses = state.courses;
+  return { courses };
+};
+
+export default connect(mapStateToProps)(FilteredCoursesList);

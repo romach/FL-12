@@ -10,7 +10,6 @@ export default class CoursesList extends Component {
           <CourseItem
             key={course.id}
             course={course}
-            deleteCourse={this.props.deleteCourse}
           />
         ))}
       </div>

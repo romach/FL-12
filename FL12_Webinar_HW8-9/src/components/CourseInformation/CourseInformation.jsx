@@ -2,17 +2,35 @@ import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import PropertyInput from "./PropertyInput";
+import { create, update } from "../../actions";
 import Button from "../Button";
 import styles from "./CourseInformation.module.css";
+import { templates, dateToString } from "../../utils/DateUtils";
+
+const initializeNewCourse = () => {
+  return {
+    name: "",
+    description: "",
+    duration: "",
+    authors: "",
+    date: dateToString(new Date())(templates.MODEL)
+  };
+};
 
 class CourseInformation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      course: props.course
-        ? props.course
-        : props.cloneCourseById(parseInt(props.match.params.id)),
+      course:
+        props.type === "new"
+          ? initializeNewCourse()
+          : {
+              ...props.courses.find(
+                course => course.id === parseInt(props.match.params.id)
+              )
+            },
       afterFailedSave: false
     };
   }
@@ -69,7 +87,9 @@ class CourseInformation extends Component {
                     type="primary"
                     onClick={() => {
                       if (this.informationIsValid()) {
-                        this.props.saveAction(this.state.course);
+                        this.props.type === "new"
+                          ? this.props.create(this.state.course)
+                          : this.props.update(this.state.course);
                         history.push("/");
                       } else {
                         this.setState({ afterFailedSave: true });
@@ -103,8 +123,14 @@ CourseInformation.propTypes = {
     date: PropTypes.string.isRequired
   }),
   title: PropTypes.string.isRequired,
-  saveAction: PropTypes.instanceOf(Function).isRequired,
-  cloneCourseById: PropTypes.instanceOf(Function)
+  type: PropTypes.string
 };
 
-export default withRouter(CourseInformation);
+const mapStateToProps = state => {
+  const courses = state.courses;
+  return { courses };
+};
+
+export default connect(mapStateToProps, { create, update })(
+  withRouter(CourseInformation)
+);
