@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "CSS frameworks",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, nobis aspernatur? Incidunt aspernatur perferen",
+    "description": "BEM, LESS, Atomic CSS, style guides, Bootstrap, CSS Grid",
     "duration": "1h25m",
     "authors": "Ostap Rybak",
     "date": "2020-02-11"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "name": "Optimization",
-    "description": "",
+    "description": "Anatomy of a web page loading, Constructing the Object Model, DOM, CSSOM, Render Blocking CSS, Optimizing the Critical Rendering Path, Image optimization, Webfont optimization, HTTP caching, CDN, HTTP/2",
     "duration": "1h",
     "authors": "Roman Volkov",
     "date": "2020-02-13"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "name": "OOP",
-    "description": "",
+    "description": "Object fundamentals, Object creation, Context resolution, OOP in JS, Composition over inheritance, ",
     "duration": "1h",
     "authors": "Oksana Hodysh",
     "date": "2020-02-18"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "name": "ES Next",
-    "description": "",
+    "description": "ECMA-262 timeline, ECMAScript 2015-2019",
     "duration": "1h",
     "authors": "Yuriy Pankiv",
     "date": "2020-02-20"
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "name": "AJAX",
-    "description": "",
+    "description": "Concurrency in JavaScript, Event loop, AJAX, AJAX via HTTP, CORS, WebSocket",
     "duration": "2h",
     "authors": "Andrii Dubchak",
     "date": "2020-02-25"
@@ -42,7 +42,7 @@
   {
     "id": 6,
     "name": "jQuery",
-    "description": "",
+    "description": "Selectors, Traversing, DOM manipulations, Animation, Events, Ajax, Utilities, jQuery Plugins, Pros and cons, Dependencies",
     "duration": "2h",
     "authors": "Anatolii Dmytruk",
     "date": "2020-02-27"
@@ -50,7 +50,7 @@
   {
     "id": 7,
     "name": "Tools",
-    "description": "",
+    "description": "Package Managers, Webpack, Documentation Software, Lintng, Control Version Systems, IDEs & Editors, Debugging & Plugins & Extensions",
     "duration": "1h",
     "authors": "Andrii Shupta",
     "date": "2020-03-03"
@@ -58,7 +58,7 @@
   {
     "id": 8,
     "name": "React.js",
-    "description": "",
+    "description": "JSX, Synthetic event, React element, React component, Component props, Component state, Virtual DOM, Reconciliation, Component lifecycle stages and methods, Components communication",
     "duration": "1h",
     "authors": "Tetiana Kandybal",
     "date": "2020-03-05"
@@ -66,7 +66,7 @@
   {
     "id": 9,
     "name": "React.js + Redux",
-    "description": "",
+    "description": "Presentational and Container components, Flux concept, Redux three principles, Redux core concepts, Actions, Reducers, Middleware",
     "duration": "1h",
     "authors": "Tetiana Kandybal",
     "date": "2020-03-10"
@@ -74,7 +74,7 @@
   {
     "id": 10,
     "name": "Angular Part 1",
-    "description": "",
+    "description": "TypeScript, Components, Directives, Services, Module, Forms, Angular CLI",
     "duration": "2h",
     "authors": "Stepan Sendun",
     "date": "2020-03-12"
@@ -82,7 +82,7 @@
   {
     "id": 11,
     "name": "Angular Part 2",
-    "description": "",
+    "description": "...",
     "duration": "1h",
     "authors": "Stepan Sendun",
     "date": "2020-03-17"
@@ -90,7 +90,7 @@
   {
     "id": 12,
     "name": "JS Patterns",
-    "description": "",
+    "description": "...",
     "duration": "1h",
     "authors": "Andrew Romanchak",
     "date": "2020-03-19"
@@ -98,7 +98,7 @@
   {
     "id": 13,
     "name": "JS Modules",
-    "description": "",
+    "description": "...",
     "duration": "2h",
     "authors": "Artem Burlaka",
     "date": "2020-03-24"
@@ -106,7 +106,7 @@
   {
     "id": 14,
     "name": "NodeJS / ExpressJS",
-    "description": "",
+    "description": "...",
     "duration": "2h",
     "authors": "Vadym Zhufiak",
     "date": " 2020-03-26"
@@ -114,10 +114,9 @@
   {
     "id": 15,
     "name": "Testing web application",
-    "description": "",
+    "description": "...",
     "duration": "1h",
     "authors": "Andrii Klymovskyi",
     "date": " 2020-03-31"
   }
- 
 ]
