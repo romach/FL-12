@@ -1,10 +1,20 @@
-<div>
-  <div *ngIf="!user.isEditing">
+<div class="user" *ngIf="!user.isEditing">
+  <div class="properties">
     <div>{{ user.name }}</div>
     <div>{{ user.email }}</div>
     <div>{{ user.phone }}</div>
-    <button type="button" (click)="delete(user)">Delete</button>
-    <button type="button" (click)="user.isEditing = true">Edit</button>
   </div>
-  <app-user-form *ngIf="user.isEditing" [user]="user" (userChange)=onChange($event)></app-user-form>
+  <div class="buttons">
+    <button type="button" class="button" (click)="delete(user)">
+      Delete
+    </button>
+    <button type="button" class="button" (click)="user.isEditing = true">
+      Edit
+    </button>
+  </div>
 </div>
+<app-user-form
+  *ngIf="user.isEditing"
+  [user]="user"
+  (userChange)="onChange($event)"
+></app-user-form>

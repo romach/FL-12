@@ -1,9 +1,22 @@
-<div>
-  <form [formGroup]="userForm" (submit)="save()">
-    <input type="text" formControlName="name" />
-    <input type="text" formControlName="email" />
-    <input type="text" formControlName="phone" />
-    <button [disabled]="userForm.invalid" type="submit">Save</button>
-    <button type="button" (click)="user.isEditing = false">Discard</button>
-  </form>
-</div>
+<form
+  [ngClass]="{
+    invalid: userForm.invalid,
+    user: true
+  }"
+  [formGroup]="userForm"
+  (submit)="save()"
+>
+  <div class="properties">
+    <input class="input input-property" type="text" formControlName="name" />
+    <input class="input input-property" type="text" formControlName="email" />
+    <input class="input input-property" type="text" formControlName="phone" />
+  </div>
+  <div class="buttons">
+    <button class="button" [disabled]="userForm.invalid" type="submit">
+      Save
+    </button>
+    <button class="button" type="button" (click)="user.isEditing = false">
+      Discard
+    </button>
+  </div>
+</form>

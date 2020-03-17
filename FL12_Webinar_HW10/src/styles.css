@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #c5cbd4;
+  font-size: 12px;
+}
+.button {
+  border-radius: 0.75rem;
+  border: 1px solid #808080;
+  height: 40px;
+  font-size: 16px;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  background-color: transparent;
+}
+.user {
+  border-radius: 0.75rem;
+  background-color: #f5f5f5;
+  padding: 1rem;
+  min-height: 95px;
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 1rem;
+  align-items: center;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+}
+.properties {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+}
+.input {
+  font-size: 16px;
+  height: 40px;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+.input-property {
+  width: 100%;
+}

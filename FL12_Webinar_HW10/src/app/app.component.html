@@ -1,9 +1,9 @@
 <div class="container">
-  <div>
-    <input [(ngModel)]="searchQuery" type="text" />
-    <button type="button" (click)="addUser()">Add new user</button>
+  <div class="search">
+    <input class="input input-search" placeholder="Search" [(ngModel)]="searchQuery" type="text" />
+    <button class="button button-search" type="button" (click)="addUser()">Add new user</button>
   </div>
-  <div>
+  <div class="user-list">
     <app-user
       *ngIf="newUser && newUser.isEditing"
       [user]="newUser"
