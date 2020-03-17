@@ -5,7 +5,7 @@
     <div>{{ user.phone }}</div>
   </div>
   <div class="buttons">
-    <button type="button" class="button" (click)="delete(user)">
+    <button type="button" class="button" (click)="delete(user.id)">
       Delete
     </button>
     <button type="button" class="button" (click)="user.isEditing = true">

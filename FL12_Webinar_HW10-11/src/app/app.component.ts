@@ -8,26 +8,27 @@ import { User } from './user/user.model'
 })
 export class AppComponent {
   users: User[] = [
-    { name: "John", email: "john@example.com", phone: "111-111-111", isEditing: false },
-    { name: "Bob", email: "bob@example.com", phone: "222-222-222", isEditing: false }
+    { id: 1, name: "John", email: "john@example.com", phone: "111-111-111", isEditing: false },
+    { id: 2, name: "Bob", email: "bob@example.com", phone: "222-222-222", isEditing: false }
   ];
   newUser: User = null;
   searchQuery: string = ""
 
-  onUserDelete(deletedUser: User) {
-    this.users = this.users.filter(user => user !== deletedUser)
+  onUserDelete(id: number) {
+    this.users = this.users.filter(user => user.id !== id)
   }
 
-  onUserCreate(event) {
-    this.users = [event, ...this.users]
+  onUserCreate(newUser: User) {
+    const id = Math.max(...this.users.map(user => user.id)) + 1
+    this.users = [{ ...newUser, id }, ...this.users]
     this.newUser = null;
   }
 
-  onUserUpdate(index: number, createdUser: User) {
-    this.users = this.users.map((user, i) => i === index ? createdUser : user);
+  onUserUpdate(updatedUser: User) {
+    this.users = this.users.map(user => user.id === updatedUser.id ? updatedUser : user);
   }
 
   addUser() {
-    this.newUser = { name: null, email: null, phone: null, isEditing: true }
+    this.newUser = { id: null, name: null, email: null, phone: null, isEditing: true }
   }
 }

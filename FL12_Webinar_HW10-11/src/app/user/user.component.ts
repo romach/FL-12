@@ -8,11 +8,11 @@ import { User } from './user.model'
 })
 export class UserComponent {
   @Input() user: User
-  @Output() userDelete = new EventEmitter<User>();
+  @Output() userDelete = new EventEmitter<number>();
   @Output() userChange = new EventEmitter<User>();
 
-  delete(user: User) {
-    this.userDelete.emit(user);
+  delete(id: number) {
+    this.userDelete.emit(id);
   }
 
   onChange(user: User) {

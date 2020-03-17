@@ -5,14 +5,14 @@
   </div>
   <div class="user-list">
     <app-user
-      *ngIf="newUser && newUser.isEditing"
+      *ngIf="newUser?.isEditing"
       [user]="newUser"
       (userChange)="onUserCreate($event)"
     ></app-user>
     <app-user
-      *ngFor="let user of users | search: searchQuery; let i = index"
+      *ngFor="let user of users | search: searchQuery"
       [user]="user"
-      (userChange)="onUserUpdate(i, $event)"
+      (userChange)="onUserUpdate($event)"
       (userDelete)="onUserDelete($event)"
     ></app-user>
   </div>

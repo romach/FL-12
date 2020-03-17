@@ -8,13 +8,11 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent implements OnInit {
-  constructor(private fb: FormBuilder) { }
-
   @Input() user: User
-
   userForm: FormGroup
-
   @Output() userChange = new EventEmitter<User>()
+  
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     const { name, email, phone } = this.user
