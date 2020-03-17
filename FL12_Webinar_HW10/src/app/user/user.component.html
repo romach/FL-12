@@ -1,0 +1,10 @@
+<div>
+  <div *ngIf="!user.isEditing">
+    <div>{{ user.name }}</div>
+    <div>{{ user.email }}</div>
+    <div>{{ user.phone }}</div>
+    <button type="button" (click)="delete(user)">Delete</button>
+    <button type="button" (click)="user.isEditing = true">Edit</button>
+  </div>
+  <app-user-form *ngIf="user.isEditing" [user]="user" (userChange)=onChange($event)></app-user-form>
+</div>
