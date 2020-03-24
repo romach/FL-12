@@ -1,1 +1,79 @@
-<p>user-details works!</p>
+<div class="header">
+  <div routerLink="/" class="back">
+    &larr;
+  </div>
+  <div class="title">
+    {{this.type === 'CREATE' ? 'New User' : 'Edit User'}}
+  </div>
+</div>
+<div class="form-container">
+  <form *ngIf="userForm; else loading" [formGroup]="userForm" (submit)="submit()">
+    <div class="properties">
+      <div class="form-group">
+        <label class="label required" for="name">Name</label>
+        <input
+          id="name"
+          [ngClass]="{
+            invalid: userForm.get('name').invalid
+          }"
+          class="input input-property"
+          type="text"
+          formControlName="name"
+        />
+      </div>
+      <div class="form-group">
+        <label class="label required" for="email">Email</label>
+        <input
+          id="email"
+          [ngClass]="{
+            invalid: userForm.get('email').invalid
+          }"
+          class="input input-property"
+          type="text"
+          formControlName="email"
+        />
+      </div>
+      <div class="form-group">
+        <label class="label required" for="phone">Phone</label>
+        <input
+          id="phone"
+          [ngClass]="{
+            invalid: userForm.get('phone').invalid
+          }"
+          class="input input-property"
+          type="text"
+          formControlName="phone"
+        />
+      </div>
+      <div class="form-group">
+        <label class="label" for="address">Address</label>
+        <input
+          id="address"
+          class="input input-property"
+          type="text"
+          formControlName="address"
+        />
+      </div>
+      <div class="form-group">
+        <label class="label" for="website">Website</label>
+        <input
+          id="website"
+          class="input input-property"
+          type="text"
+          formControlName="website"
+        />
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="button" [disabled]="userForm.invalid" type="submit">
+        Save
+      </button>
+      <button routerLink="/" class="button" type="button">
+        Discard
+      </button>
+    </div>
+  </form>
+  <ng-template #loading>
+    Loading...
+  </ng-template>
+</div>

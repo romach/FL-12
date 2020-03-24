@@ -1,21 +1,21 @@
 <div class="wrapper">
   <div class="search">
-  <input
-    class="input input-search"
-    placeholder="Search"
-    [(ngModel)]="searchQuery"
-    type="text"
-  />
-  <button class="button button-search" type="button" routerLink="/users/new">
-    Add new user
-  </button>
-</div>
-<div class="user-list">
-  <app-user
-    *ngFor="let user of users"
-    [user]="user"
-    (userDelete)="onUserDelete($event)"
-  ></app-user>
-</div>
-
+    <input
+      class="input input-search"
+      placeholder="Search"
+      [ngModel]="search"
+      (ngModelChange)="ngModelChange($event)"
+      type="text"
+    />
+    <button class="button button-search" type="button" routerLink="/users/new">
+      Add new user
+    </button>
+  </div>
+  <div class="user-list">
+    <app-user
+      *ngFor="let user of users"
+      [user]="user"
+      (userDelete)="onUserDelete($event)"
+    ></app-user>
+  </div>
 </div>

@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core'
 import { User } from './user.model'
-import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user',
@@ -9,15 +8,11 @@ import { UserService } from '../user.service';
 })
 export class UserComponent {
   @Input() user: User
-  @Output() userChange = new EventEmitter<User>();
+  @Output() userDelete = new EventEmitter<number>();
 
-  constructor(private userService: UserService) {}
+  constructor() { }
 
   onDelete(id: number) {
-    this.userService.deleteUser(id);
-  }
-
-  onChange(user: User) {
-    this.userChange.emit(user)
+    this.userDelete.emit(id);
   }
 }
