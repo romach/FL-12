@@ -1,0 +1,39 @@
+.field {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border-bottom: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  cursor: pointer;
+}
+
+.cell.cell-x, .cell.cell-o {
+  cursor: default;
+}
+
+.cell-x {
+  background-image: url("../img/icon-x.svg");
+}
+
+.cell-o {
+  background-image: url("../img/icon-o.svg");
+}
+
+.cell.win {
+  background-color: #00800040;
+}
+
+.cell:nth-child(-n + 3) {
+  border-top: 2px solid #ccc;
+}
+
+.cell:nth-child(3n + 1) {
+  border-left: 2px solid #ccc;
+}
